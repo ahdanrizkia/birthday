@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<title>For the winner</title>
+<link rel="stylesheet" href="style.css">
+
+<head>
+    <body>
+<div class="bg">
+    <div class="hero">
+        <div class="judul">
+            <h2>Mantap, keren banget kamu</h2>
+        </div>
+
+<div class="claimC">
+<audio id="audioSaya" src="lagu.mp3"></audio>
+
+
+<p class="claim" id="tombolAudio">
+    Claim!
+</p>
+
+<script>
+    var audio = document.getElementById("audioSaya");
+    var tombol = document.getElementById("tombolAudio");
+
+    audio.volume = 1.0;
+
+    tombol.addEventListener("click", function() {
+    
+        audio.play().catch(function(error) {
+            console.log("Pemutaran diblokir oleh browser:", error);
+        });
+
+    
+        this.remove(); 
+    });
+</script>
+</div>
+</div>
+</div>
+</body>
+</head>

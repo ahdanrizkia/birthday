@@ -1,0 +1,43 @@
+.bg {
+    background: url(bg.jpg);
+     max-width: 100%; 
+    height: auto;  
+}
+
+
+.hero {
+    width: auto;
+    height: 600px;
+}
+
+.judul {
+    color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: pixel, arial;
+}
+
+.claimC{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.claim {
+    display: flex;
+    color: rgb(15, 58, 15);
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: white;
+    width: 50px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.claim:hover {
+    transform: scale(2.0) translateY(5px) translateX(5px);
+    background-color: rgb(24, 20, 20);
+    color: white;
+}
