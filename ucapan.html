@@ -11,6 +11,24 @@
 </head>
 <body>
 
+<!-- OVERLAY LOADING SCREEN -->
+<div id="loading-screen">
+  <div class="loading-content">
+    <div class="cat-anim">🐱</div> 
+    
+    <h2 id="loading-text">Sela, aku ingin kamu membaca semua lirik ucapan kalimat ini.</h2>
+    <p id="loading-status">Tunggu bentar ya, lagi nyiapin lagunya... </p>
+
+    <div id="game-box" onclick="jump()">
+      <div id="player"></div>
+      <div id="obstacle"></div>
+    </div>
+    <p class="game-hint">Gabut? Ketuk kotak di atas buat lompat!</p>
+
+    <button id="btn-mulai">Buka Ucapan</button>
+  </div>
+</div>
+
   <!-- Background Animasi Love -->
    <div class="confetti" id="confetti" aria-hidden="true"></div>
   <div class="floating-bg">
