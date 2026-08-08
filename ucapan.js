@@ -99,48 +99,31 @@ const playlist = [
     lyrics: "So, where did you go i should know but it's cold And i dont wanna be lonely so tell me you'll come home. Even if it's just a lie. \n I tried not to upset you, let you, rescue  me the day i met you \n i just wanted to protect you But now i'll never get to"
   },
   {
-    title: "TIME OF DYING",
+    title: "JUST Th WAY Y ARE",
     audioSrc: "lagu/song3.mp3",
     imageSrc: "img/song3.png",
-    lyrics: "I will not die, i'll wait here for you, i fell alive when your beside me. \n I will not die, i'll wait here for you, in MY TIME OF DYING."
-  },
-  {
-    title: "JUST Th WAY Y ARE",
-    audioSrc: "lagu/song4.mp3",
-    imageSrc: "img/song4.png",
     lyrics: "The way talk, the way you're movin' closer \n The way you kiss, the way you're deep inside me. \n Cause everytime, every time i think about you. I want you just \n JUST THE WAY YOU ARE :D."
   },
   {
-    title: "Summertime Sdnes",
-    audioSrc: "lagu/song5.mp3",
-    imageSrc: "img/song5.png",
-    lyrics: "Think i'll miss you forever, like the star miss the sun \n In the morning sky, later's better than never. \n Even if you're gone, im gonna drive, drive."
-  },
-  {
     title: "8 letters",
-    audioSrc: "lagu/song6.mp3",
-    imageSrc: "img/song6.png",
+    audioSrc: "lagu/song4.mp3",
+    imageSrc: "img/song4.png",
     lyrics: "If all it is is eight letters why its so hard to say? \n If all it is is eight lettes-When i close my eyes \n its you there is my mind (its always you :>) When i close my eyes~ \n Just ask me if you dont know what is 8 lettes mean 🗿😭 i know you know opkors ;v"
   },
   {
-    title: "Lov Me nt",
-    audioSrc: "lagu/song7.mp3",
-    imageSrc: "img/song7.png",
-    lyrics: "I miss you come here and oh its hard to see you but i wish you were right here \n Owhh its hard to leave you but i get you everywhere."
-  },
-  {
     title: "be my baby",
-    audioSrc: "lagu/song8.mp3",
-    imageSrc: "img/song8.png",
+    audioSrc: "lagu/song5.mp3",
+    imageSrc: "img/song5.png",
     lyrics: "You know I will adore you 'til eternity\n So won't you, please (be my, be my baby)\n Be my little baby? (My one and only baby)\n Say you'll be my darlin' (be my, be my baby xD) \n Be baby now (my one and only baby)"
   },
   {
     title: "Masa ini, masa nanti",
-    audioSrc: "lagu/song9.mp3",
-    imageSrc: "img/song9.png",
+    audioSrc: "lagu/song6.mp3",
+    imageSrc: "img/song6.png",
     isSynced: true, // Tanda kalau lagu ini pakai lirik sinkron
     lyrics: [
       { time: 0, text: "Baca semua lirik ini pelan pelan ya Sela :>" },
+      { time: 2, text: "Atau sambil nyanyi bareng juga boleh ;v" },
       { time: 4, text: "Aku juga ingin menyampaikan hal yang sama" },
       { time: 8, text: "Seperti apa yang Nuca tuliskan disini." },
       { time: 11, text: "Hai, kau datang di saat yang tepat." },
@@ -152,6 +135,7 @@ const playlist = [
       { time: 82, text: "dengan hadirmu dihidupku sudah ku merasa cukup :>" },
       { time: 93, text: "Sela, Makasih yaa!!" },
       { time: 95, text: "Semoga kamu selalu diberi kebahagiaan" },
+      { time: 98, text: "Dan merasa aman selalu..." },
       { time: 101, text: "Izin kan ku berjalan bersamamu, mimpi yang tlah lama ku dambakan." },
       { time: 112, text: "Kini semua terasa indah"   },
       { time: 119, text: "hitam putih pun mulai berwarna" },
@@ -161,20 +145,30 @@ const playlist = [
       { time: 161, text: "Di mana ini, masa nanti, dan masa indah lainnya x>" },
       { time: 168, text: "hmm sajdasjkd yeahh you know?" },
       { time: 170, text: "its married lol" },
-      { time: 171, text: "Sehat selalu ya!" },
+      { time: 172, text: "Sehat selalu ya!" },
       { time: 179, text: "Semua kata yang terucap semua tertuju padamu 😫 " },
       { time: 190, text: "SEMUA ARAH YANG KU TEMPUH, semua tertuju PADAMU❤️❤️" },
+      { time: 198, text: "Selaaa" },
+      { time: 199, text: "Taukah kamu" },
+      { time: 200, text: "Bahwa" },
       { time: 201, text: "Kau adalah semua jawaban" },
       { time: 207, text: "Dari doa yang ku panjatkan" },
       { time: 212, text: "Dengan HADIRMUU, dihidupku sudah ku merasa cukup :>" },
       { time: 224, text: "Hati ini, telah menetapkan engkau sosok yang kan temani" },
       { time: 236, text: "Di masa ini, masa nanti dan masa indah lainnya <3" },
       { time: 243, text: "Sela, sehat selalu ya?" },
-      { time: 246, text: "Rawat dirimu baik baik ya ameliamikaela." },
-      { time: 249, text: "Kamu masih pegang janjinya kan??" },
-      { time: 251, text: "aku percaya sama kamu kok. Sela" },
-      { time: 254, text: "Happy birthday! my best friend." },
-      { time: 257, text: "Sekarang kamu boleh lanjut baca bukunya :V" },
+      { time: 245, text: "Rawat dirimu baik baik ya ameliamikaela." },
+      { time: 248, text: "Kamu masih pegang janjinya kan??" },
+      { time: 250, text: "aku percaya sama kamu kok. Sela" },
+      { time: 253, text: "Kalo boleh jujur...." },
+      { time: 256, text: "Meskipun kita hanya temenan.." },
+      { time: 258, text: "Aku benar benar menyayangimu Sela." },
+      { time: 260, text: "Aku sangat mencintaimu Sela." },
+      { time: 262, text: "Aku suka kamu, dan.." },
+      { time: 263, text: "ingin memberimu kasih sayang" },
+      { time: 267, text: "yang mungkin belum kamu dapatkan." },
+      { time: 269, text: "Happy birthday! my best friend." },
+      { time: 272, text: "Sekarang kamu boleh lanjut baca bukunya :V" },
       
     ]
   }
