@@ -1,0 +1,511 @@
+/* --- RESET & BASE STYLES --- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    
+
+    body {
+      background-color: #fde8e8;
+      color: #6d3535; 
+      font-family: 'Press Start 2P', monospace;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+      overflow-x: hidden;
+    }
+
+    /* --- TOP ELEMENTS --- */
+    .top-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 90%;
+      max-width: 600px;
+      margin-top: 10px;
+    }
+
+    .back-btn {
+      background-color: #d97b73;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.6rem;
+      padding: 8px 16px;
+      border-radius: 12px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 0 #b55d55;
+      transition: all 0.1s ease;
+    }
+
+    .back-btn:active {
+      transform: translateY(4px);
+      box-shadow: 0 0 0 #b55d55;
+    }
+
+    .main-title {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 10px;
+      color: #5e2d2d;
+    }
+
+    .subtitle {
+      font-size: 0.6rem;
+      color: #8c4848;
+      opacity: 0.9;
+    }
+
+    /* --- CAROUSEL SLIDER --- */
+    .carousel-wrapper {
+      width: 100%;
+      max-width: 1000px;
+      height: 240px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      position: relative;
+      margin: 20px 0;
+    }
+
+    .carousel-track {
+      display: flex;
+      align-items: center;
+      transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+      will-change: transform;
+    }
+
+    .music-card {
+      width: 300px;
+      height: 148px;
+      margin: 0 15px;
+      border-radius: 20px;
+      overflow: hidden;
+      flex-shrink: 0;
+      transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+      transform: scale(0.85);
+      opacity: 0.5;
+      box-shadow: 0 10px 20px rgba(181, 93, 85, 0.418);
+      cursor: pointer;
+      background: transparent;
+    }
+
+    .music-card.active {
+      transform: scale(1.15);
+      opacity: 1;
+      box-shadow: 0 15px 30px rgba(181, 93, 85, 0.3);
+      border: none;
+    }
+
+    .music-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      pointer-events: none;
+    }
+
+    /* <--- LYRICS SECTION ---> */
+.lyrics-container {
+  width: 85%;
+  max-width: 500px;
+  height: 160px; 
+  overflow-y: auto;
+  display: flex;
+  align-items: flex-start; /* Ubah dari center biar teks selalu mulai dari atas */
+  justify-content: center;
+  text-align: center;
+  margin: 10px 0;
+  padding-right: 5px; /* Jarak biar teks nggak nempel ke scrollbar */
+}
+
+/* Kustomisasi scrollbar biar estetik (warna pink) */
+.lyrics-container::-webkit-scrollbar {
+  width: 6px;
+}
+.lyrics-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+.lyrics-container::-webkit-scrollbar-thumb {
+  background: #d97b73;
+  border-radius: 10px;
+}
+
+.lyrics-text {
+  font-family: 'VT323', monospace;
+  font-size: 1.4rem;
+  line-height: 1.3;
+  color: #5e2d2d;
+  white-space: pre-line;
+  transition: opacity 0.3s ease;
+  width: 100%;
+}
+
+/* --- SPOTIFY STYLE LYRICS --- */
+.lyric-line {
+  display: block;
+  margin-bottom: 12px;
+  opacity: 0.3; 
+  transform: scale(0.95);
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.lyric-line.active {
+  opacity: 1; 
+  transform: scale(1);
+  color: #d97b73; 
+  font-weight: bold;
+}
+
+/* --- TYPING CURSOR ANIMATION --- */
+.typing-cursor {
+  color: #d97b73;
+  font-weight: 800;
+  font-size: 1.4rem;
+  margin-left: 2px;
+  animation: blinkCursor 0.7s steps(2, start) infinite;
+}
+
+@keyframes blinkCursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+    /* --- CONTROLS SECTION --- */
+    .controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 20px;
+    }
+
+    .ctrl-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #c26d6d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.15s ease, color 0.15s ease;
+      padding: 10px;
+    }
+
+    .ctrl-btn:hover {
+      color: #9e4747;
+      transform: scale(1.1);
+    }
+
+    .ctrl-btn:active {
+      transform: scale(0.95);
+    }
+
+    .ctrl-btn svg {
+      fill: currentColor;
+    }
+
+    .play-btn svg {
+      width: 45px;
+      height: 45px;
+    }
+
+    .nav-btn svg {
+      width: 30px;
+      height: 30px;
+    }
+
+    #play-btn {
+  font-size: 2rem; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+
+    @media (max-width: 600px) {
+      .main-title { font-size: 0.9rem; }
+      .music-card { width: 220px; height: 135px; margin: 0 10px; }
+      .lyrics-text { font-size: 1.25rem; }
+      .carousel-wrapper { height: 200px; }
+    }
+
+/* ======================= MINECRAFT BOOK STYLES ======================= */
+#mc-book-widget {
+  --mc-border-outer: #9c5f5f;  /* Warna cover / frame luar */
+  --mc-border-inner: #c48b8b;  /* Frame dalam */
+  --mc-page-bg: #f0b6b6;      /* Warna kertas pastel pink */
+  --mc-text: #5e2d2c;         /* Teks gelap kontras (biar terbaca jelas) */
+  --mc-stitch: #8b1e1e;       /* Jahitan samping */
+  --mc-arrow-bg: #5e2d2c;     /* Tombol aksen */
+  --mc-arrow-text: #f0b6b6;   /* Simbol panah */
+
+  font-family: 'VT323', monospace;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 20px 0 40px 0;
+}
+
+.mc-hidden { 
+  display: none !important; 
+}
+
+/* ---- Cover ---- */
+.mc-book-cover {
+  width: 220px;
+  height: 140px;
+  background: var(--mc-border-outer);
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 4px var(--mc-border-inner), 0 6px 0 rgba(0,0,0,0.2);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.08s ease;
+  user-select: none;
+}
+
+.mc-book-cover:hover { 
+  transform: translateY(-2px); 
+}
+
+.mc-book-cover:active { 
+  transform: translateY(1px); 
+}
+
+.mc-cover-inner { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  gap: 6px; 
+}
+
+.mc-cover-title { 
+  color: #f0b6b6; 
+  font-size: 26px; 
+  letter-spacing: 1px; 
+  text-shadow: 2px 2px 0 rgba(0,0,0,0.3); 
+}
+
+.mc-cover-sub { 
+  color: #ebd0d0; 
+  font-size: 15px; 
+}
+
+/* ---- Open Book GUI ---- */
+.mc-book-gui { 
+  animation: mcPopIn 0.12s ease-out; 
+}
+
+@keyframes mcPopIn {
+  from { opacity: 0; transform: scale(0.97); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.mc-page-outer {
+  width: 310px;
+  background: var(--mc-border-outer);
+  padding: 8px;
+  border-radius: 12px;
+  box-shadow: 0 8px 0 rgba(0,0,0,0.15), 0 8px 14px rgba(0,0,0,0.2);
+}
+
+.mc-page-inner {
+  background: var(--mc-border-inner);
+  padding: 6px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.mc-page-content {
+  background: var(--mc-page-bg);
+  border-radius: 4px;
+  padding: 18px 16px 14px 28px;
+  min-height: 300px;
+  position: relative;
+  color: var(--mc-text);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Red binding stitches on the left margin */
+.mc-stitches {
+  position: absolute;
+  left: 4px;
+  top: 22px;
+  bottom: 22px;
+  width: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.mc-stitch {
+  width: 10px;
+  height: 16px;
+  background: var(--mc-stitch);
+  border-radius: 0 50% 50% 0 / 0 50% 50% 0;
+  box-shadow: 1px 0 0 rgba(0,0,0,0.15);
+}
+
+.mc-page-header {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 18px;
+  color: var(--mc-text);
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.mc-page-text {
+  flex: 1;
+  font-size: 20px;
+  line-height: 1.35;
+  text-align: left;
+  overflow-y: auto;
+  color: var(--mc-text);
+}
+
+.mc-page-text h4 {
+  margin: 0 0 6px 0;
+  font-size: 22px;
+  text-decoration: underline;
+  color: var(--mc-text);
+}
+
+.mc-page-text ul {
+  margin: 4px 0 14px 0;
+  padding-left: 22px;
+}
+
+.mc-page-text li { 
+  margin-bottom: 4px; 
+}
+
+.mc-page-text p { 
+  margin: 4px 0; 
+}
+
+.mc-page-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.mc-arrow-btn {
+  width: 32px;
+  height: 28px;
+  background: var(--mc-arrow-bg);
+  border: none;
+  border-radius: 4px;
+  box-shadow: inset -2px -3px 0 rgba(0,0,0,0.3), inset 2px 2px 0 rgba(255,255,255,0.2);
+  color: var(--mc-arrow-text);
+  font-family: 'VT323', monospace;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.06s ease, filter 0.1s ease;
+}
+
+.mc-arrow-btn:hover:not(:disabled)  { filter: brightness(1.2); }
+.mc-arrow-btn:active:not(:disabled) { transform: translateY(1px); }
+.mc-arrow-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+
+
+ :root {
+  --red: #e23b4e;
+  --heart-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21.6 4.1 13.7a5.1 5.1 0 0 1 7.2-7.2l.7.7.7-.7a5.1 5.1 0 1 1 7.2 7.2z'/%3E%3C/svg%3E");
+}
+
+/* ======================= A. PARALLAX BACKGROUND (KURSOR) ======================= */
+.confetti {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -2; /* Berada di lapisan paling dasar */
+}
+
+.confetti__layer {
+  position: absolute;
+  inset: 0;
+  will-change: transform;
+}
+
+/* Kita pakai class .p-heart khusus parallax agar tidak bentrok */
+.p-heart {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background: var(--red);
+  -webkit-mask: var(--heart-mask) center/contain no-repeat;
+          mask: var(--heart-mask) center/contain no-repeat;
+  position: absolute;
+  opacity: 0;
+  animation: drift linear infinite;
+}
+
+@keyframes drift {
+  0%   { opacity: 0; transform: translateY(10px) rotate(0deg) scale(.9); }
+  10%  { opacity: .4; }
+  90%  { opacity: .4; }
+  100% { opacity: 0; transform: translateY(-26px) rotate(12deg) scale(1.05); }
+}
+
+/* ======================= B. FLOATING HEARTS (MELAYANG KE ATAS) ======================= */
+.floating-bg {
+  position: fixed;
+  top: 0; 
+  left: 0;
+  width: 100vw; 
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1; /* Berada di atas parallax, tapi di bawah teks ucapan */
+  pointer-events: none;
+}
+
+/* Khusus targetkan .heart di dalam .floating-bg */
+.floating-bg .heart {
+  position: absolute;
+  bottom: -10vh;
+  font-size: 24px;
+  color: rgba(217, 123, 115, 0.25); 
+  animation: floatUp linear infinite;
+  /* Reset properti jika sempat terpengaruh */
+  background: none;
+  mask: none;
+  -webkit-mask: none;
+  width: auto;
+  height: auto;
+}
+
+.floating-bg .heart:nth-child(1) { left: 15%; animation-duration: 12s; animation-delay: 0s; font-size: 20px; }
+.floating-bg .heart:nth-child(2) { left: 35%; animation-duration: 16s; animation-delay: 2s; font-size: 32px; }
+.floating-bg .heart:nth-child(3) { left: 55%; animation-duration: 11s; animation-delay: 4s; font-size: 52px; }
+.floating-bg .heart:nth-child(4) { left: 75%; animation-duration: 15s; animation-delay: 1s; font-size: 36px; }
+.floating-bg .heart:nth-child(5) { left: 90%; animation-duration: 13s; animation-delay: 3s; font-size: 26px; }
+
+@keyframes floatUp {
+  0% { 
+    transform: translateY(0) rotate(0deg); 
+    opacity: 9; /* Diperbaiki nilainya (CSS opacity rentangnya 0 sampai 1) */
+  }
+  100% { 
+    transform: translateY(-110vh) rotate(360deg); 
+    opacity: 0.8; 
+  }
+}

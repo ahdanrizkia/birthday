@@ -1,0 +1,555 @@
+/* =========================
+        PAGE
+========================= */
+
+@font-face {
+    font-family: 'pixel';
+    src: url('font/deltarune.ttf');
+}
+
+@font-face {
+    font-family: 'pixel2';
+    src: url('font/determination.ttf');
+}
+
+@keyframes muncul {
+  to {
+    opacity: 1; 
+    transform: translateX(0);
+  }
+}
+
+:root {
+  --red: #e23b4e;
+  --heart-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21.6 4.1 13.7a5.1 5.1 0 0 1 7.2-7.2l.7.7.7-.7a5.1 5.1 0 1 1 7.2 7.2z'/%3E%3C/svg%3E");
+}
+
+/* Shape dasar Love (SVG mask) */
+.heart {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background: var(--red);
+  -webkit-mask: var(--heart-mask) center/contain no-repeat;
+          mask: var(--heart-mask) center/contain no-repeat;
+}
+
+/* Container & animasi drift background */
+.confetti {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0; /* Sesuaikan z-index agar berada di belakang konten utama */
+}
+
+.confetti__layer {
+  position: absolute;
+  inset: 0;
+  will-change: transform;
+}
+
+.confetti .heart {
+  position: absolute;
+  opacity: 0;
+  animation: drift linear infinite;
+}
+
+@keyframes drift {
+  0%   { opacity: 0; transform: translateY(10px) rotate(0deg) scale(.9); }
+  10%  { opacity: .7; }
+  90%  { opacity: .7; }
+  100% { opacity: 0; transform: translateY(-26px) rotate(12deg) scale(1.05); }
+}
+
+.button {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    width: 100%;
+    margin-top: 20px; 
+}
+
+.back-btn {
+      background-color: #d97b73;
+      width: 60px;
+      height: 20px;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      padding: 8px 16px;
+      border-radius: 12px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 0 #b55d55;
+      transition: all 0.1s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: pixel2;
+    }
+
+    .back-btn:active {
+      transform: translateY(4px);
+      box-shadow: 0 0 0 #b55d55;
+    }
+
+.congrats-page{
+
+    width:min(90%,500px);
+
+    margin:35px auto 60px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    position:relative;
+
+}
+
+.fx{ position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden; }
+
+.fx__aurora{ position:absolute; inset:-10%; }
+.fx__aurora::before,
+.fx__aurora::after{
+  content:""; position:absolute; border-radius:50%;
+  will-change:transform;
+}
+.fx__aurora::before{          /* warm pink bloom */
+  width:65vmax; height:65vmax; left:-10%; top:-5%;
+  background:radial-gradient(circle at 50% 50%, rgba(236, 174, 193, 0.85), rgba(255,193,212,0) 62%);
+  animation:auroraA 19s ease-in-out infinite alternate;
+}
+.fx__aurora::after{           /* peach bloom */
+  width:70vmax; height:70vmax; right:-20%; bottom:-20%;
+  background:radial-gradient(circle at 50% 50%, rgba(212, 162, 153, 0.8), rgba(255,225,196,0) 62%);
+  animation:auroraB 24s ease-in-out infinite alternate;
+}
+@keyframes auroraA{
+  0%  { transform:translate(0,0) scale(1); }
+  100%{ transform:translate(8vw,6vh) scale(1.18); }
+}
+@keyframes auroraB{
+  0%  { transform:translate(0,0) scale(1.1); }
+  100%{ transform:translate(-7vw,-5vh) scale(.92); }
+}
+
+.fx__vignette{
+  position:absolute; inset:0;
+  background:radial-gradient(125% 110% at 50% 38%, transparent 52%, rgba(120,40,50,.12) 100%);
+}
+.fx__grain{
+  position:absolute; inset:0;
+  background:url("./textures/grain.png") repeat;
+  background-size:180px 180px;
+  opacity:.4;
+  mix-blend-mode:multiply;
+  animation:grainShift 5s steps(4) infinite;
+}
+@keyframes grainShift{
+  0%{ transform:translate(0,0); }   25%{ transform:translate(-2%,1%); }
+  50%{ transform:translate(1%,-2%); } 75%{ transform:translate(-1%,-1%); }
+  100%{ transform:translate(0,0); }
+}
+
+
+/* =========================
+        TITLE
+========================= */
+
+
+.congrats-title{
+
+    font-family: pixel, "Press Start 2P", monospace;
+
+    font-size:3.5rem;
+
+    color:#7d3945;
+
+    text-align:center;
+
+    line-height:1.5;
+
+    margin-bottom:28px;
+
+    opacity: 0; /* Mulai dengan teks tidak terlihat */
+  transform: translateX(-38px);
+  animation: muncul 1.5s ease-out forwards;
+
+}
+
+.congrats-title span{
+
+    display:block;
+
+    font-size:.65rem;
+
+    color:#d78995;
+
+    margin-bottom:10px;
+
+}
+
+mark {
+  background-color: transparent;
+  color: #d78995;
+}
+
+
+
+
+/* =========================
+        PHOTO
+========================= */
+
+.photo-card{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-bottom:1px;
+
+    opacity: 0; /* Mulai dengan teks tidak terlihat */
+     transform: translatey(15px);
+     animation: muncul 0.9s ease-out forwards;
+
+}
+
+.photo-card img{
+
+    width:min(90%, 420px);
+
+    aspect-ratio:4 / 3;
+
+    object-fit:contain;
+
+    display:block;
+
+}
+
+
+
+/* =========================
+        PRETTY
+========================= */
+
+.pretty{
+
+    margin-top:28px;
+
+    margin-bottom:22px;
+
+    font-family: pixel, "Press Start 2P", monospace;
+
+    font-size: 3.5rem;
+
+    color:#7d3945;
+
+    letter-spacing:1px;
+
+     opacity: 0; /* Mulai dengan teks tidak terlihat */
+     transform: translateX(-38px);
+     animation: muncul 1.5s ease-out forwards;
+}
+
+/* =========================
+      LOVE MESSAGE
+========================= */
+
+.love-message{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:28px 0;
+
+}
+
+.love-message img{
+
+    width:min(92%, 420px);
+
+    height:auto;
+
+    display:block;
+
+}
+
+/* =========================
+        LETTER
+========================= */
+
+.letter-wrapper{
+
+    margin-top:80px;
+
+    width:420px;
+
+    display:flex;
+
+    justify-content:center;
+
+    position:relative;
+
+}
+
+/* surat */
+
+.letter{
+
+    position:relative;
+
+    width:360px;
+
+    height:170px;
+
+    background:#f6b6c6;
+
+    border:3px solid #d78995;
+
+    border-radius:8px;
+
+    box-shadow:0 6px 18px rgba(0,0,0,.08);
+
+}
+
+/* pegangan */
+
+.letter::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-18px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:40px;
+
+    height:28px;
+
+    background:#ffc2d0;
+
+    border:3px solid #d78995;
+
+    border-radius:8px 8px 0 0;
+
+}
+
+/* =========================
+      RESPONSIVE
+========================= */
+
+@media(max-width:550px){
+
+.photo-frame{
+
+    width:180px;
+
+    height:180px;
+
+}
+
+.pretty{
+
+    font-size:.9rem;
+
+}
+
+.message{
+
+    width:95%;
+
+    font-size:.8rem;
+
+}
+
+.letter-wrapper{
+
+    width:260px;
+
+}
+
+.left-door,
+.right-door{
+
+    width:122px;
+    height:145px;
+
+}
+
+}
+
+/* =========================
+        LETTER
+========================= */
+
+.letter-wrapper{
+
+    width:100%;
+
+    height:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    position:relative;
+
+    overflow:visible;
+
+    margin-top:90px;
+
+}
+
+.letter{
+
+    position:absolute;
+
+    bottom:0;
+
+    width:min(92%,430px);
+
+    height:900px;      /* tinggi surat */
+
+    background:#f6b6c6;
+
+    border:3px solid #d78995;
+
+    border-radius:10px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.18);
+
+    transform:translateY(720px);
+
+    overflow:hidden;
+
+}
+/* =========================
+   DRAGGABLE CARD STYLES
+========================= */
+.draggable-envelope-container {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(92%, 450px);
+    z-index: 50;
+
+    height: 100px; 
+}
+
+.paper {
+    position: absolute;
+
+    bottom: -497px; 
+    left: 0;
+    width: 100%;
+    height: 495px; 
+    background: #f6b6c6; 
+    border: 3px solid #d97b73; 
+    border-bottom: none;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 -8px 25px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    will-change: transform;
+}
+
+.handle {
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 35px;
+    background: #f0b6b6;
+    border: 3px solid #d97b73;
+    border-bottom: none;
+    border-radius: 12px 12px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: grab;
+    /* Cute bounce animation for the arrow to prompt dragging */
+    animation: bounce 2s infinite ease-in-out;
+}
+
+.handle:active {
+    cursor: grabbing;
+    animation: none;
+}
+
+.paper-content {
+    padding: 30px 20px;
+    font-family: pixel2;
+    font-size: 0.9rem;
+    color: #7d3945;
+    line-height: 1.8;
+    text-align: left;
+    /* Crucial: Hidden overflow until fully opened */
+    overflow-y: hidden; 
+    flex-grow: 1;
+    margin-bottom: 60px; /* Space for the button */
+}
+
+/* Added dynamically via JS when fully opened */
+.paper-content.scroll-active {
+    overflow-y: auto;
+}
+
+.next-btn {
+
+    display: block;
+    width: fit-content;
+    margin: 20px 0 0 auto; 
+    
+    background: #f0b6b6;
+    border: 2px solid #d97b73;
+    color: #d97b73;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-family: pixel2;
+    font-size: 1.2rem;
+    font-weight: bold;
+    z-index: 99;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+.next-btn:hover {
+    background: #d97b73;
+    color: #fff;
+}
+.next-btn.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+
+@keyframes bounce {
+    0%, 100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, -5px); }
+}
+
+/* Add a transition class for the elements shifting up */
+.shift-element {
+    will-change: transform;
+}

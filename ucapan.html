@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A hope..</title>
+  <link rel="stylesheet" href="ucapan.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Background Animasi Love -->
+   <div class="confetti" id="confetti" aria-hidden="true"></div>
+  <div class="floating-bg">
+    <div class="heart">&#10084;</div>
+    <div class="heart">&#10084;</div>
+    <div class="heart">&#10084;</div>
+    <div class="heart">&#10084;</div>
+    <div class="heart">&#10084;</div>
+  </div>
+
+  <div class="top-container">
+    <a href="congrats.html" class="back-btn">Back</a>
+    <h1 class="main-title">This sentence is<br>relate for us</h1>
+    <p class="subtitle">or maybe just for me xDD</p>
+  </div>
+
+  <div class="carousel-wrapper" id="carousel-wrapper">
+    <div class="carousel-track" id="track"></div>
+  </div>
+
+  <div class="lyrics-container">
+    <p class="lyrics-text" id="lyrics-text">Loading...</p>
+  </div>
+
+  <div class="controls">
+    <button class="ctrl-btn nav-btn" id="prev-btn" aria-label="Previous">
+      <svg viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+    </button>
+    
+    <button class="ctrl-btn play-btn" id="play-btn" aria-label="Play/Pause">
+      <svg id="play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+    </button>
+    
+    <button class="ctrl-btn nav-btn" id="next-btn" aria-label="Next">
+      <svg viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+    </button>
+  </div>
+
+  <!-- Atribut preload="auto" biar audio langsung didownload pas web dibuka -->
+  <audio id="audio-player" preload="auto"></audio>
+
+  
+<!-- ======================= MINECRAFT BOOK WIDGET ======================= -->
+<div id="mc-book-widget">
+
+  <!-- Closed Cover / Trigger -->
+  <div id="mc-book-cover" class="mc-book-cover">
+    <div class="mc-cover-inner">
+      <span class="mc-cover-title">Ini aku, Akhdan.</span>
+      <span class="mc-cover-sub">click to open</span>
+    </div>
+  </div>
+
+  <!-- Open Book GUI -->
+  <div id="mc-book-gui" class="mc-book-gui mc-hidden">
+    <div class="mc-page-outer">
+      <div class="mc-page-inner">
+
+        <!-- Red stitches on left binding -->
+        <div class="mc-stitches">
+          <span class="mc-stitch"></span>
+          <span class="mc-stitch"></span>
+          <span class="mc-stitch"></span>
+          <span class="mc-stitch"></span>
+          <span class="mc-stitch"></span>
+        </div>
+
+        <div class="mc-page-content">
+          <div class="mc-page-header">
+            <span id="mc-page-indicator">Page 1 of 1</span>
+          </div>
+
+          <div id="mc-page-text" class="mc-page-text"></div>
+
+          <div class="mc-page-footer">
+            <button id="mc-prev-btn" class="mc-arrow-btn" aria-label="Previous page">&#9664;</button>
+            <button id="mc-next-btn" class="mc-arrow-btn" aria-label="Next page">&#9654;</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+  <script src="ucapan.js"></script>
+  </body>
+  </html>
+
+
+
+
+
+
