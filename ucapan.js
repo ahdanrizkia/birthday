@@ -1,3 +1,32 @@
+/* ======================= LOGIKA LOADING ======================= */
+window.addEventListener('load', function() {
+  document.getElementById('loading-status').style.display = 'none'; 
+  document.getElementById('btn-mulai').style.display = 'block'; 
+});
+
+// Aksi ketika tombol "Buka Ucapan" diklik
+document.getElementById('btn-mulai').addEventListener('click', function() {
+  const loadingScreen = document.getElementById('loading-screen');
+  loadingScreen.style.opacity = '0';
+  
+  setTimeout(() => {
+    loadingScreen.style.display = 'none'; 
+  }, 800);
+});
+
+/* ======================= LOGIKA MINI GAME ======================= */
+const player = document.getElementById('player');
+
+function jump() {
+  if (player.classList.contains('jump-anim')) return;
+  
+  player.classList.add('jump-anim');
+  
+  setTimeout(() => {
+    player.classList.remove('jump-anim');
+  }, 500); // Harus sama dengan durasi animasi CSS (0.5s)
+}
+
 const confettiBox = document.getElementById('confetti');
 const CONFETTI_COLORS = ['#e8546a', '#f08aa0', '#d83a52', '#f6b3c2', '#c83048'];
 const PARALLAX = [];
