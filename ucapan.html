@@ -14,9 +14,11 @@
 <!-- OVERLAY LOADING SCREEN -->
 <div id="loading-screen">
   <div class="loading-content">
-    <div class="cat-anim">🐱</div> 
+    <div class="cat-anim">
+      <img src="img/wolf-sleep.png">
+    </div> 
     
-    <h2 id="loading-text">Sela, aku ingin kamu membaca dan mendengarkan semua lirik ucapan kalimat ini.</h2>
+    <h4 id="loading-text">Sela, aku ingin kamu membaca dan mendengarkan semua lirik & ucapan kalimat ini.</h4>
     <p id="loading-status">Tunggu bentar ya, lagi nyiapin lagunya... </p>
 
     <div id="game-box" onclick="jump()">
@@ -40,7 +42,7 @@
   </div>
 
   <div class="top-container">
-    <a href="congrats.html" class="back-btn">Back</a>
+    <a href="cupid.html" class="back-btn">Back</a>
     <h1 class="main-title">This sentence is<br>relate for us</h1>
     <p class="subtitle">or maybe just for me xDD</p>
   </div>
@@ -113,10 +115,197 @@
     </div>
   </div>
 
+  <div id="music-player">
+  <!-- UI Music Player lo di sini -->
+</div>
+
+<!-- Virtual Pet Container -->
+<div id="wolf-container">
+  <!-- Speech Bubble -->
+  <div id="speech-bubble" class="pixel-bubble"></div>
+  
+  <!-- Wolf Image -->
+  <img id="wolf-img" src="img/wolf-idle.png" alt="Minecraft Savanna Wolf">
+</div>
+
 </div>
 
 
   <script src="ucapan.js"></script>
+
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.getElementById('wolf-container');
+  const wolfImg = document.getElementById('wolf-img');
+  const speechBubble = document.getElementById('speech-bubble');
+  const barkAudio = new Audio('lagu/wolf-bark.mp3');
+
+  // State Machine Constants
+  const STATES = { IDLE: 'IDLE', SLEEPING: 'SLEEPING', PATTED: 'PATTED' };
+  let currentState = STATES.IDLE;
+
+  // Timers & Intervals
+  let idleTimer;
+  let barkTimer;
+  let zzzInterval;
+  let tailAnimationInterval;
+  let patTimeout;
+  
+  // Flags
+  let hasInteracted = false;
+  let initialTooltipShown = false;
+
+  // Animation Sequence (0 -> 1 -> 2 -> 1 -> loop)
+  const patSequence = ['img/pat-1.png', 'img/pat-2.png', 'img/pat-3.png', 'img/pat-2.png'];
+
+  // Utility: Random Integer Generator
+  const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+  // UI: Tampilkan Teks di Bubble
+  const showBubble = (text, duration) => {
+    speechBubble.innerText = text;
+    speechBubble.classList.add('show');
+    
+    if (duration > 0) {
+      setTimeout(() => {
+        speechBubble.classList.remove('show');
+      }, duration);
+    }
+  };
+
+  // UI: Spawn Zzz
+  const spawnParticle = (type) => {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    particle.innerText = type === 'zzz' ? 'Zzz' : '❤️';
+    
+    const offsetX = getRandomInt(-20, 20);
+    const offsetY = type === 'zzz' ? getRandomInt(-10, 10) : getRandomInt(-20, 0);
+    
+    particle.style.left = `calc(50% + ${offsetX}px)`;
+    particle.style.top = `${offsetY}px`;
+    
+    container.appendChild(particle);
+    setTimeout(() => particle.remove(), 2000);
+  };
+
+  const resetIdleTimer = () => {
+    clearTimeout(idleTimer);
+    const sleepDelay = getRandomInt(64000, 130000); 
+    idleTimer = setTimeout(fallAsleep, sleepDelay);
+  };
+
+  const fallAsleep = () => {
+    if (currentState === STATES.PATTED) return; 
+    currentState = STATES.SLEEPING;
+    wolfImg.src = 'img/wolf-sleep.png';
+    wolfImg.classList.remove('skala-kecil')
+    zzzInterval = setInterval(() => spawnParticle('zzz'), 1200);
+  };
+
+  const wakeUp = () => {
+    currentState = STATES.IDLE;
+    wolfImg.src = 'img/wolf-idle.png';
+    wolfImg.classList.add('skala-kecil');
+    clearInterval(zzzInterval);
+    resetIdleTimer();
+  };
+
+  const patWolf = () => {
+    currentState = STATES.PATTED;
+    
+    // Clear segala sesuatu dari state sebelumnya
+    clearInterval(zzzInterval);
+    clearTimeout(patTimeout);
+    clearInterval(tailAnimationInterval);
+
+    // 1. Cabut class kecil
+    wolfImg.classList.remove('skala-kecil');
+    // 2. LANGSUNG ganti src ke frame pertama (pat-1.png) detik itu juga biar ga meledak
+    wolfImg.src = patSequence[0]; 
+
+    // Muncratin hati
+    for (let i = 0; i < 3; i++) {
+      setTimeout(() => spawnParticle('heart'), i * 200);
+    }
+
+    // 3. Loop animasi ekor (Mulai dari frame ke-2 alias index 1)
+    let frame = 1; 
+    tailAnimationInterval = setInterval(() => {
+      wolfImg.src = patSequence[frame % patSequence.length];
+      frame++;
+    }, 150);
+
+    // Selesai dielus setelah 2 detik
+    patTimeout = setTimeout(() => {
+      clearInterval(tailAnimationInterval);
+      if (currentState !== STATES.SLEEPING) {
+        currentState = STATES.IDLE;
+        wolfImg.src = 'img/wolf-idle.png';
+        wolfImg.classList.add('skala-kecil'); // Balik kecil lagi
+      }
+      resetIdleTimer();
+    }, 2000);
+  };
+
+  const scheduleNextBark = () => {
+    clearTimeout(barkTimer);
+    const barkDelay = getRandomInt(60000, 180000);
+    
+    barkTimer = setTimeout(() => {
+      if (currentState !== STATES.SLEEPING && hasInteracted) {
+        barkAudio.play().catch(e => console.warn("Bark error: ", e));
+        const text = Math.random() < 0.5 ? "Sela!" : "Akhdan!";
+        showBubble(text, 2500);
+      }
+      scheduleNextBark(); 
+    }, barkDelay);
+  };
+
+  // --- INTERACTION LOGIC ---
+  container.addEventListener('click', () => {
+    
+    // Trik Buka Izin Audio (Silent Play)
+    if (!hasInteracted) {
+      hasInteracted = true;
+      barkAudio.volume = 0; // Mute
+      barkAudio.play().then(() => {
+        barkAudio.pause();
+        barkAudio.currentTime = 0;
+        barkAudio.volume = 1; // Unmute untuk nanti
+      }).catch(e => console.log("Tunggu interaksi"));
+      
+      // Hilangkan tooltip awal
+      if (initialTooltipShown) {
+        speechBubble.classList.remove('show');
+      }
+    }
+
+    if (currentState === STATES.SLEEPING) {
+      wakeUp();
+    } else {
+      patWolf();
+    }
+  });
+
+  // --- INITIALIZATION ---
+  const init = () => {
+    wolfImg.classList.add('skala-kecil');
+
+    setTimeout(() => {
+      if (!hasInteracted) {
+        initialTooltipShown = true;
+        showBubble("Tap to pat!", 0); 
+      }
+    }, 3000);
+
+    resetIdleTimer();
+    scheduleNextBark();
+  };
+
+  init();
+});
+</script>
   </body>
   </html>
 
