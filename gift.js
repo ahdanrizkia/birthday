@@ -3,7 +3,7 @@ const SURPRISE_CONFIG = {
     occasionText: "Happy Birthday, my best friend😁🎂",
     partnerName: "Sela",
     senderName: "Akhdan",
-    message: "Sela, kamu pernah bilang kepadaku bahwa kamu pernah bertanya pada dirimu sendiri. *kenapa aku ada di dunia ini? kalo gaada juga kayanya gabakal berpengaruh*. Seingatku. Aku hanya mau bilang, terimakasih sudah tetap mau hidup sampai sekarang, kamu hebat. sebenarnya setiap orang punya ketakutan masing masing, jadi aku ga melarang kamu untuk mengatakan itu. Di hari ulangtahunmu ini. Aku hanya ingin kamu tahu betapa berartinya dirimu bagiku. ❤️ Kamu adalah sumber kebahagiaan dan kenyamananku, serta orang favoritku di hidup ini. Terima kasih telah mengisi hidupku dengan cinta, tawa, dan kenangan indah yaa. Selamat ulang tahun yang ke 17, Sela. 🎂 🎂"
+    message: "Sela, kamu pernah bilang kepadaku bahwa kamu pernah bertanya pada dirimu sendiri. *kenapa aku ada di dunia ini? kalo gaada juga kayanya gabakal berpengaruh*. Seingatku. Aku hanya mau bilang, terimakasih sudah tetap mau hidup sampai sekarang, kamu hebat. Sebenarnya setiap orang punya ketakutan masing masing, jadi aku ga melarang kamu untuk mengatakan itu. Di hari ulangtahunmu ini. Aku hanya ingin kamu tahu betapa berartinya dirimu bagiku. ❤️ Kamu adalah sumber kebahagiaan dan kenyamananku, serta orang favoritku di hidup ini. Terima kasih telah mengisi hidupku dengan cinta, tawa, dan kenangan indah yaa. Selamat ulang tahun yang ke 17, Sela. 🎂 🎂"
 };
 document.addEventListener('DOMContentLoaded', () => {
     const partnerNameEl = document.getElementById('partnerName');
