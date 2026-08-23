@@ -19,6 +19,8 @@
   }
 }
 
+
+
 :root {
   --red: #e23b4e;
   --heart-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21.6 4.1 13.7a5.1 5.1 0 0 1 7.2-7.2l.7.7.7-.7a5.1 5.1 0 1 1 7.2 7.2z'/%3E%3C/svg%3E");
@@ -67,6 +69,12 @@
     align-items: center;
     width: 100%;
     margin-top: 20px; 
+}
+
+.container-back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .back-btn {
@@ -162,19 +170,15 @@
 .congrats-title{
 
     font-family: pixel, "Press Start 2P", monospace;
-
     font-size:3.5rem;
-
     color:#7d3945;
-
     text-align:center;
-
     line-height:1.5;
-
     margin-bottom:28px;
-
+    position: relative;
+    z-index: 1;
     opacity: 0; /* Mulai dengan teks tidak terlihat */
-  transform: translateX(-38px);
+  transform: translateX(-30px);
   animation: muncul 1.5s ease-out forwards;
 
 }
@@ -191,7 +195,7 @@
 
 }
 
-mark {
+.m2 {
   background-color: transparent;
   color: #d78995;
 }
@@ -204,22 +208,18 @@ mark {
 ========================= */
 
 .photo-card{
-
     width:100%;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     margin-bottom:1px;
-
-    opacity: 0; /* Mulai dengan teks tidak terlihat */
-     transform: translatey(15px);
-     animation: muncul 0.9s ease-out forwards;
-
+    opacity: 0;
+     transform: translateY(15px);
+     animation: muncul 1s ease-out forwards;
+    position: relative;
+    z-index: 1;
 }
+
 
 .photo-card img{
 
@@ -242,21 +242,45 @@ mark {
 .pretty{
 
     margin-top:28px;
-
     margin-bottom:22px;
-
     font-family: pixel, "Press Start 2P", monospace;
-
-    font-size: 3.5rem;
-
+    font-size: 2rem !important;
     color:#7d3945;
-
     letter-spacing:1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
 
-     opacity: 0; /* Mulai dengan teks tidak terlihat */
-     transform: translateX(-38px);
-     animation: muncul 1.5s ease-out forwards;
+     opacity: 0;
+     animation: delay 5s ease-out forwards;
 }
+
+@keyframes delay{
+  0% {
+    opacity: 0;
+  }
+  2% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  25% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+  93% {
+    transform: translateY(-10px);   
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);    
+  }
+}
+
 
 /* =========================
       LOVE MESSAGE
@@ -501,13 +525,22 @@ mark {
     color: #7d3945;
     line-height: 1.8;
     text-align: left;
-    /* Crucial: Hidden overflow until fully opened */
     overflow-y: hidden; 
     flex-grow: 1;
-    margin-bottom: 60px; /* Space for the button */
+    margin-bottom: 20px;
+    
+}
+.paper-content:-webkit-scrollbar {
+  width: 6px;
+}
+.paper-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+.paper-content:-webkit-scrollbar-thumb {
+  background: #d97b73;
+  border-radius: 10px;
 }
 
-/* Added dynamically via JS when fully opened */
 .paper-content.scroll-active {
     overflow-y: auto;
 }
@@ -529,8 +562,7 @@ mark {
     font-weight: bold;
     z-index: 99;
 
-    opacity: 0;
-    pointer-events: none;
+
     transition: opacity 0.4s ease;
 }
 .next-btn:hover {
