@@ -93,38 +93,44 @@ const playlist = [
     lyrics: "Karena bersamamu semua terasa indah,\ngundah gulana hatiku telah hancur sirna.\nJanjiku takkan ku lepas wahai\nkau bidadariku dari surga.\nTuk selamanya."
   },
   {
-    title: "ILOMILO",
+    title: "Everyting y ar",
     audioSrc: "lagu/song2.mp3",
     imageSrc: "img/song2.png",
+    lyrics: "oh kita bergantian Bertukar nestapa, menawar trauma \n Datang seadanya, terasku terbuka \n Kita hampir mati dan kau selamatkan aku \nDan ku menyelamatkanmu dan sekarang aku tahu \n Cerita kita tak jauh berbeda \n Got beat down by the world, sometimes I wanna fold \n Namun suratmu kan kuceritakan ke anak-anakku nanti \n Bahwa aku pernah dicintai. Seada-adanya"
+  },
+  {
+    title: "ILOMILO",
+    audioSrc: "lagu/song3.mp3",
+    imageSrc: "img/song3.png",
     lyrics: "So, where did you go i should know but it's cold And i dont wanna be lonely so tell me you'll come home. Even if it's just a lie. \n I tried not to upset you, let you, rescue  me the day i met you \n i just wanted to protect you But now i'll never get to"
   },
   {
     title: "JUST Th WAY Y ARE",
-    audioSrc: "lagu/song3.mp3",
-    imageSrc: "img/song3.png",
-    lyrics: "The way talk, the way you're movin' closer \n The way you kiss, the way you're deep inside me. \n Cause everytime, every time i think about you. I want you just \n JUST THE WAY YOU ARE :D."
+    audioSrc: "lagu/song4.mp3",
+    imageSrc: "img/song4.png",
+    lyrics: "The way you walk, the way you understand me \n The way you move, the way you just whisper me \nThe way you touch, the way you used to kiss me \n I want you just, JUST THE WAY YOU ARE :D"
   },
   {
     title: "8 letters",
-    audioSrc: "lagu/song4.mp3",
-    imageSrc: "img/song4.png",
-    lyrics: "If all it is is eight letters why its so hard to say? \n If all it is is eight lettes-When i close my eyes \n its you there is my mind (its always you :>) When i close my eyes~ \n Just ask me if you dont know what is 8 lettes mean 🗿😭 i know you know opkors ;v"
+    audioSrc: "lagu/song5.mp3",
+    imageSrc: "img/song5.png",
+    lyrics: "Why do I pull you close? And then ask you for space If all it is is eight letters why its so hard to say? \n If all it is is eight lettes-When i close my eyes \n its you there is my mind (its always you :>) When i close my eyes~ \n Just ask me if you dont know what is 8 lettes mean 🗿😭 i know you know opkors ;v"
   },
   {
     title: "be my baby",
-    audioSrc: "lagu/song5.mp3",
-    imageSrc: "img/song5.png",
-    lyrics: "You know I will adore you 'til eternity\n So won't you, please (be my, be my baby)\n Be my little baby? (My one and only baby)\n Say you'll be my darlin' (be my, be my baby xD) \n Be baby now (my one and only baby)"
+    audioSrc: "lagu/song6.mp3",
+    imageSrc: "img/song6.png",
+    lyrics: "You know I will adore you 'til eternity\n So won't you, please (be my, be my baby)\n Be my little baby? (My one and only baby)\n Say you'll be my darlin' (be my, be my baby xD) \n Be baby now (my one and only baby) \n Just kidding Sel😭, bukan sekarang kok 😭🙏"
   },
   {
     title: "Masa ini, masa nanti",
-    audioSrc: "lagu/song6.mp3",
-    imageSrc: "img/song6.png",
-    isSynced: true, // Tanda kalau lagu ini pakai lirik sinkron
+    audioSrc: "lagu/song7.mp3",
+    imageSrc: "img/song7.png",
+    isSynced: true,
     lyrics: [
       { time: 0, text: "Baca semua lirik ini pelan pelan ya Sela :>" },
-      { time: 2, text: "Atau sambil nyanyi bareng juga boleh ;v" },
-      { time: 4, text: "Aku juga ingin menyampaikan hal yang sama" },
+      { time: 3, text: "Atau sambil nyanyi bareng juga boleh ;v" },
+      { time: 5, text: "Aku juga ingin menyampaikan hal yang sama" },
       { time: 8, text: "Seperti apa yang Nuca tuliskan disini." },
       { time: 11, text: "Hai, kau datang di saat yang tepat." },
       { time: 20, text: "Kau ajarkan apa itu cinta, lewat mata kau berbicara" },
@@ -154,19 +160,19 @@ const playlist = [
       { time: 201, text: "Kau adalah semua jawaban" },
       { time: 207, text: "Dari doa yang ku panjatkan" },
       { time: 212, text: "Dengan HADIRMUU, dihidupku sudah ku merasa cukup :>" },
-      { time: 224, text: "Hati ini, telah menetapkan engkau sosok yang kan temani" },
+      { time: 224, text: "Hati ini, telah menetapkan engkau sosok yang kan menemani ku." },
       { time: 236, text: "Di masa ini, masa nanti dan masa indah lainnya <3" },
       { time: 243, text: "Sela, sehat selalu ya?" },
       { time: 245, text: "Rawat dirimu baik baik ya ameliamikaela." },
       { time: 248, text: "Kamu masih pegang janjinya kan??" },
       { time: 250, text: "aku percaya sama kamu kok. Sela" },
       { time: 253, text: "Kalo boleh jujur...." },
-      { time: 256, text: "Meskipun kita hanya temenan.." },
-      { time: 258, text: "Aku benar benar menyayangimu Sela." },
-      { time: 260, text: "Aku sangat mencintaimu Sela." },
-      { time: 262, text: "Aku suka kamu, dan.." },
+      { time: 255, text: "Meskipun kita hanya temenan.." },
+      { time: 257, text: "Aku benar benar menyayangimu Sela." },
+      { time: 259, text: "Aku sangat mencintaimu Sela." },
+      { time: 261, text: "Aku suka kamu, dan.." },
       { time: 263, text: "ingin memberimu kasih sayang" },
-      { time: 267, text: "yang mungkin belum kamu dapatkan." },
+      { time: 265, text: "yang mungkin belum kamu dapatkan." },
       { time: 269, text: "Happy birthday! my best friend." },
       { time: 272, text: "Sekarang kamu boleh lanjut baca bukunya :V" },
       
@@ -392,24 +398,33 @@ document.addEventListener('DOMContentLoaded', function () {
   var pages = [
     {
       html:
+      '<p>Aduh lagi lagi si Sampeu ngejaga buku lagi😭😭😭 Makasih Sampeu</p>' +
+      '<p>Kamu bisa main sama si sampeu, pencet aja kalo kamu pengen ngusap dia. Kalo lagi tidur dia bakal bangun kok😭</p>' +
+      '<p>Gapapaa bangunin aja, jangan biarin dia tidurr.. tidur mulu dia wkwkkwkw baru bangun pas kamu sampe sini :V</p>'
+    },
+    {
+      html :
+      '<h5> A prose poetry</h5>' +
+      '<p> Maka akan kucintai kau sekujurnya. segala paradoks yang membangun kesadaranmu, segala reatakan yang membentuk karaktermu, segala keraguan yang menguji eksistensimu, serta seluruh variabel yang menjadikanmu berbeda dari siapapun di dunia ini. Sebab mencintaimu bukan tentang menerima kesempurnaan, melainkan memahami kompleksitasnya. Maka, akan kucintai, akan kucintai. </p>'
+    },
+    {
+      html:
         '<h4>Halo selaa :D</h4>' +
-        '<ul>' +
-          '<p>Bayangkan kamu sendang mengobrol denganku</p>' +
-        '</ul>' +
+        '<p>Bayangkan kamu sendang mengobrol denganku</p>' +
         '<p>Halaman halaman selanjutnya adalah ratusan kalimat tentang aku, dan caraku memandangmu.</p>' +
-        '<h3> This is a hudred of sentences that presenting myselft at July. Im sorry for all of my yapp xD </h3>'
+        '<h5> This is a hudred of sentences that presenting myselft at July. Im sorry for all of my yapp xD </h5>'
     },
     {
       html:
         
-        '<p>For me, you1ll always be my favorite person today, tomorrow and forever. ' +
+        '<p>For me, you`ll always be my favorite person today, tomorrow and forever. ' +
         'I have no reason to give up on you, even if you show me the worst parts of yourself. I`ll still be here. I don`t care how hard things get. Or how bad your mood is sometime, i still choose you. Cause i don`t wanna love anyone else. Its always been you, and its always be you.</p>'
     },
     {
       html:
         
         '<p> Hey orang orang, ada lohh teman yang baik banget kepada ku. Dia Sela, bayangin dia mengajakku untuk mewujudkan keinginanku di bidang pertanian. Aku kaget, akhirnya ada orang yang mengapresiasi perjalanan ku.. meskipun itu masih plan angan angan saja tapi aku sudah senang banget dia sampai mau menawarkan itu hahahaha xD</p>' +
-        '<h4>2 Juli--26. Saat aku kembali heran kenapa aku tidak punya lahan untuk Bertani</h4>'
+        '<h5>2 Juli--26. Saat aku kembali heran kenapa aku tidak punya lahan untuk Bertani</h5>'
     },
     {
       html:
@@ -480,7 +495,7 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     {
       html:
-      '<p>. Libatkan aku untuk membuat dirimu lebih baik. Aku gabakal pergi sama sakali, mau apapun yang kamu ceritakan. "Semua manusia juga layak dengan semua orang, namun yang membedakannya cuman satu, apakah orang itu bisa terus mempelajari orang yang ingin dia dapatkan dari sisi gelap dan sisi terangnya sampai ia menerima semua sisi orang tersebut. Semua manusia ini gk ada yang sempurna, makanya mereka saling melengkapi :> </p>'
+      '<p>Libatkan aku untuk membuat dirimu lebih baik. Aku gabakal pergi sama sakali, mau apapun yang kamu ceritakan. Karena "Semua manusia juga layak dengan semua orang, namun yang membedakannya cuman satu, apakah orang itu bisa terus mempelajari orang yang ingin dia dapatkan dari sisi gelap dan sisi terangnya sampai ia menerima semua sisi orang tersebut. Semua manusia ini gk ada yang sempurna, makanya mereka saling melengkapi :> </p>'
     },
     {
       html:
@@ -495,10 +510,13 @@ document.addEventListener('DOMContentLoaded', function () {
     {
       html:
       '<h5>Harapan 1</h5>'+
-      '<p>Jangan pergi ya, jangan pernah ubah tujuan kita ya :< Aku gampang sakit hati, kali ini.. jangan kamu sakiti ya, aku udah terlanjur jauhhh banget. Sel tau ga? ;v</p>'+
+      '<p>Jangan pergi ya, jangan pernah ubah tujuan kita ya:< Aku gampang sakit hati, kali ini.. jangan kamu sakiti ya, aku udah terlanjur jauhhh banget. Sel tau ga? ;v</p>'+
       '<p> ... </p>'+
-      '<p> Sekarang pikiranku sibuk pengen tau harga properti dan tanah waduh, kejauhan banget tau. Yang dipikiranku bisakah aku membuat kita layak tinggal? Rumah impian ku, halaman impianku. Maka, jangan pergi ya? Banyak orang katanya cinta umur segini tuh suka cinta monyet, dikiranya asli, dikiranya serius tapi ujung ujungnya pisah. Aku mau buktikan itu ga relevan buat kita. Kalo kita punya masalah di perbedaan berfikir yang bisa menyebabkan kita berpisah.. </p>' 
-
+      '<p> Sekarang pikiranku sibuk pengen tau harga properti dan tanah waduh, kejauhan banget tau. </p>' 
+    },
+    {
+      html:
+      '<p>Yang dipikiranku bisakah aku membuat kita layak tinggal? Rumah impian ku, halaman impianku. Maka, jangan pergi ya? Banyak orang katanya cinta umur segini tuh suka cinta monyet, dikiranya asli, dikiranya serius tapi ujung ujungnya pisah. Aku mau buktikan itu ga relevan buat kita. Kalo kita punya masalah di perbedaan berfikir yang bisa menyebabkan kita berpisah.. </p>'
     },
     {
       html:
@@ -511,16 +529,16 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     {
       html:
-      '<p>disana aku menganggap diriku gagal. Aku takut itu, dan aku selalu takut itu. Itu adalah settingan pabrik dari otakku, gabisa diubah. Mungkin nanti bisa diubah heheheh, tapi sekarang susah banget. Kaya gimana ya, hmmm mungkin itu memang keinginan ku gitu atau apalah akwkwkwkk mungkin anda paham karena kita sama ;v</p>'
+      '<p>disana aku menganggap diriku gagal. Aku takut itu, dan aku selalu takut itu. Itu adalah settingan pabrik dari otakku saat masih kelas 7 hingga sekarang, gabisa diubah. Mungkin nanti bisa diubah heheheh, tapi sekarang susah banget. Kaya gimana ya, hmmm mungkin itu memang keinginan ku gitu atau apalah akwkwkwkk mungkin anda paham karena kita sama ;v</p>'
     },
     {
       html:
       '<h5>Harapan 2</h5>' +
-      '<p> Sella, Kamu pasti tau ini. Seorang laki laki itu insecure kalo punya hubungan dengan seorang cewek yang lebih mapan darinya. Laki laki berevolusi dengan "Hero instings" dimana dia merasa menjadi pahlawan atas pasangannya adalah sebuah keberhasilan, diluar itu adalah sebuah kegagalan. Maaf kalo kamu ga ngerti kenapa aku ngomong gitu, begini. Saat ini, otakku sudah hidup di umur 27+. Bukan biar terlihat dewasa dan gagayaan, </p>'
+      '<p> Sella, Kamu pasti tau ini. Seorang laki laki itu insecure kalo punya hubungan dengan seorang cewek yang lebih mapan darinya. Laki laki berevolusi dengan "Hero instings" dimana dia merasa menjadi pahlawan atas pasangannya adalah sebuah keberhasilan, diluar itu adalah sebuah kegagalan. Maaf kalo kamu ga ngerti kenapa aku ngomong gitu, begini. Saat ini, otakku sudah hidup di umur 23+. Bukan biar terlihat dewasa dan gagayaan, </p>'
     },
     {
       html:
-      '<p>, tapi aku overthinking yang biasanya illegal buat umur 16. Aku sibuk mikirin dunia industri nanti, aku sibuk lihat harga aset dan properti, aku sibuk mikirin gimana nanti ngebiayain diri sendiri, orang tuaku, keluargaku, dan…KAMU? Itu membuatku lebih siap sebenarnya dengan buktinya sekarang saya berani mengatakan sudah lebih depan di anak lainnya. Aku mau sekali aja ngakuin diri sendiri buat ngerasa udah beda LV.</p>'
+      '<p>tapi aku overthinking yang biasanya illegal buat umur 16. Aku sibuk mikirin dunia industri nanti, aku sibuk lihat harga aset dan properti, aku sibuk mikirin gimana nanti ngebiayain diri sendiri, orang tuaku, keluargaku, dan…KAMU? Itu membuatku lebih siap sebenarnya dengan buktinya sekarang saya berani mengatakan sudah lebih depan di anak lainnya. Aku mau sekali aja ngakuin diri sendiri buat ngerasa udah beda LV.</p>'
     },
     {
       html:
@@ -588,7 +606,7 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     {
       html:
-      '<p>Padahal setiap hari aku memikirkan bagaimana caranya agar "layak" denganmu. Aku juga  setiap kali ingin berkata "Aku serius memperjuangkan ini", hati, lidah, dan otakku selalu tertahan oleh kenyataan bahwa semua yang aku progreskan Itu akan diukur dari angka, pekerjaan, kemapanan, tanggung jawab, isi rekening. Bukan dari seberapa tahan dan seberapa bagus ideku😔</p>'+
+      '<p>Padahal setiap hari aku memikirkan bagaimana caranya agar "layak" denganmu. Aku juga setiap kali ingin berkata "Aku serius memperjuangkan ini", tapi hati, lidah, dan otakku selalu tertahan oleh kenyataan bahwa semua yang aku progreskan Itu akan diukur dari angka, pekerjaan, kemapanan, tanggung jawab, isi rekening. Bukan dari seberapa tahan dan seberapa bagus ideku😔</p>'+
       '<p>..</p>'
     },{
       html:
@@ -607,13 +625,11 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     {
       html:
-      '<p>Kita lanjutin ngobrolnya di WA ya, Mau? Aku pengen tau pesan dan harapanmu. Aku bakal ngasi waktu ko ke kamu, kapanpun. Kirim kode ini ke WA ku ya: A-99-S<3</p>' +
+      '<p>Kita lanjutin ngobrolnya di WA ya, Mau? Aku pengen tau pesan dan harapanmu. Aku bakal ngasi waktu ko ke kamu, kapanpun. Kirim kode ini ke WA ku ya: A-99-fS<3</p>' +
       '<h5>5 Juli--26 |  27 Juli--26. saat diriku takut kehilanganmu, Sela. Saat diriku benar benar out of mind tentang data data dari 1998 sampai setelah covid. </h5>'
     },
   ];
-
   var currentPage = 0;
-
   var coverEl      = document.getElementById('mc-book-cover');
   var guiEl        = document.getElementById('mc-book-gui');
   var textEl       = document.getElementById('mc-page-text');
@@ -624,6 +640,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (!coverEl || !guiEl) return;
 
   function renderPage() {
+    textEl.scrollTop = 0;
     textEl.innerHTML = pages[currentPage].html;
     indicatorEl.textContent = 'Page ' + (currentPage + 1) + ' of ' + pages.length;
     prevBtn.disabled = currentPage === 0;
