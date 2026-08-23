@@ -1,263 +1,139 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Birthdayy</title>
-  
-  <!-- Gabungan Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Pixelify+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  
-  <!-- Gabungan CSS -->
-  <link rel="stylesheet" href="congrats.css">
-  <link rel="stylesheet" href="BF.css" />
-  
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Surprise For You 🎁 Sela</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="gift.css">
 </head>
+
 <body>
 
-  <!-- BACKGROUND GLOBAL (Cukup 1 kali aja) -->
-  <div class="fx" aria-hidden="true">
-    <div class="fx__aurora"></div>
-    <div class="fx__vignette"></div>
-    <div class="fx__grain"></div>
-  </div>
-  <div class="rain" id="rain" aria-hidden="true"></div>
-  <div class="confetti" id="confetti" aria-hidden="true"></div>
+    <div class="bg-particles" id="bgParticles"></div>
 
-  
-  <main class="scene" id="game-section">
+    <canvas id="balloonCanvas"></canvas>
 
-    <!-- STATE 1: shoot Cupid's arrow at the letter to open it -->
-    <div class="stage stage--aim" id="aimStage" tabindex="0" role="application"
-         aria-label="Aim and shoot Cupid's arrow at the letter to open it. Press space to shoot.">
+    <div class="container">
 
-      <!-- floating target: the closed envelope -->
-      <div class="target" id="target">
-        <div class="envelope" aria-hidden="true">
-          <span class="envelope__flap"></span>
-          <span class="heart envelope__seal"></span>
-        </div>
-        <p class="target__label">
-          <span class="heart heart--inline"></span>
-                 Happy 17th!! Tembak ♡ itu xD
-          <span class="heart heart--inline"></span>
-        </p>
-      </div>
-
-      <!-- the flying arrow -->
-      <div class="arrow" id="arrow" aria-hidden="true"></div>
-
-      <!-- the bow -->
-      <div class="archer" id="archer" aria-hidden="true">
-        <div class="bow" id="bow"></div>
-        <span class="nock" id="nock"></span>
-      </div>
-
-      <p class="hint" id="hint">
-        <span id="hintText">Aim &amp; release to shoot Cupid&rsquo;s arrow</span>
-        <span class="heart heart--inline"></span>
-      </p>
-    </div>
-
-    <!-- STATE 2: opened "LOVE" window -->
-    <section class="window" id="window" aria-hidden="true">
-      <header class="titlebar">
-        <span class="titlebar__name">LOVE</span>
-        <span class="titlebar__btns">
-          <button class="winbtn" type="button" aria-label="Minimize" tabindex="-1">&#95;</button>
-          <button class="winbtn" type="button" aria-label="Maximize" tabindex="-1">&#9633;</button>
-          <button class="winbtn winbtn--x" type="button" id="closeBtn" aria-label="Close letter">&#10005;</button>
-        </span>
-      </header>
-
-      <div class="heartrow" aria-hidden="true">
-        <span class="heart"></span><span class="hdot"></span>
-        <span class="heart"></span><span class="hdot"></span>
-        <span class="heart"></span>
-      </div>
-
-      
-      <div class="content" id="content">
-        <h1 class="title" id="title"><mark>Happy birthdayy!!</mark>, did i your BF? Best friend! :></h1>
-        <canvas class="cat" id="cat" width="16" height="16" aria-label="A little cat holding a heart" role="img"></canvas>
-        
-        <div class="buttons" id="buttons">
-          <button class="btn btn--yes" type="button" id="yesBtn">YA</button>
-          <button class="btn btn--no"  type="button" id="noBtn">TIDAKK</button>
-        </div>
-        
-      
-        <p class="final" id="final" hidden>
-            Kamu adalah orang yang hebat, Serius. Bagaimana bisa kamu melewati hal hal yang tidak bisa terpikirkan orang? Terus kamu ga nyerah lagi!! Aku salut banget asli:D
-            Kamu adalah salah satu orang yang bisa bikin aku kagum bangett ishh!@#@> Ko bisa sihh 😵😫
-            <span class="heart heart--inline"></span>
-        </p>
-
-        <button id="nextBtn" class="next-btn" hidden>Lanjut yuk?</button>
-
-      </div>
-    </section>
-  </main>
-
-
-
-
-  <!-- ========================================== -->
-  <!-- BAGIAN 2: CONGRATS PAGE (Awalnya ngumpet)  -->
-  <!-- ========================================== -->
-  <main class="congrats-page" id="congrats-section" style="display: none;">
-    <div class="container-back">
-    <a href="#" id="back-btn" class="back-btn">Back</a>
-    </div>
-    <div>
-     <h1 class="congrats-title">
-            <span>♥ ♥ ♥</span>
-            <mark class="m2">OMG</mark> THIS IS YOU??
-        </h1>
-
-       <section class="photo-card">
-
-    <img src="img/foto.webp" alt="My Bestfriend">
-
-</section>
-
-        <h1 class="pretty">
-
-            SOO PRETTYY x,x
-
-        </h1>
-        <div class="love-message">
-    <img src="img/loveText.png" alt="birthday-message">
-</div>
-
-
-
-    <div class="draggable-envelope-container">
-    <div class="paper" id="paper">
-        <div class="handle" id="handle">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d97b73" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M18 15l-6-6-6 6"/>
-            </svg>
+        <div class="gift-box-container" id="giftBoxContainer">
+            <div class="box-glow-burst" id="boxGlow"></div>
+            <div class="gift-box" id="giftBox">
+                <div class="ribbon-vertical"></div>
+                <div class="ribbon-horizontal"></div>
+                <div class="bow">
+                    <div class="loop left"></div>
+                    <div class="loop right"></div>
+                    <div class="ribbon-tail left"></div>
+                    <div class="ribbon-tail right"></div>
+                    <div class="center-knot"></div>
+                </div>
+                <div class="box-lid"></div>
+                <div class="box-body"></div>
+            </div>
+            <p class="gift-instruction">Pencet hehehhehe 🤭</p>
         </div>
 
-        <div class="paper-content" id="paper-content">
-            <p>
-                Sebelumnya.. Maafkan jika selama ini perlakuan diriku baik secara fisik, perkataan, ide, ajakan dan karakter kepadamu mengingatkan ke trauma mu itu, mungkin termasuk teks ini? meskipun sedikit, hal yang kecil-kecil pun. Maafkan ya, itu emang bener bener kesalahan ku yang tidak bisa memahami ketakutan seorang perempuan, karena jujur setiap langkah yang aku ambil itu selalu diambil dari keputusan yang paling jauh dari hal itu. Aku juga benci terhadap hal itu, sebagai laki laki juga aku bingung kenapa banyak laki laki seperti itu. Juga, jika kamu cape mendengarkanku terus-menerus tentang keluhan hidupku yang terlalu di dramatis dramatiskan ini, keluhan yang mungkin menurut kamu bukan sebuah keluhan? Sekali lagi, maaf ya.. itu terjadi karena kamu adalah temanku yang salah satunya bisa jadi tempat ternyaman untuk keluarnya keluhan yang mengangguku, bahkan aku tidak mau mengeluhkanya ke Kaka ku. Temanku ini, Sela. Adalah tempat yang aku anggap pulang, jadi wajarkan ya xixixixixixi :D
-            </p>
-            <p>
-                Teks ini ditulis 29juni, jauh banget ya? Wkwkwk lagian aku kepikiran mulu soal hari ini.
-29juni, tepat saat prototipe web ini baru mulai dibuat. Tepat setelah diriku nangis miris soal keluargaku¹.
-Tahukah temanku, kamu salah satunya orang yang membuatku berani membuka diri kepada seseorang :D ini adalah teks yang selalu ingin ku ceritakan kepadamu tapi.. dimulai dari diriku yang malu untuk menceritakan hal ini, aku takut diriku yang semakin tidak tenang karena merasa malu setelah menceritakanya karena merasa tidak pantas dikeluhkan. Hehe :>
-            </p>
-            <p>
-                Temanku, Sela. Ini adalah diriku, isi hati ku yang sekarang tidak ku tutupi karena aku percaya padamu, jujur sepertinya aku selalu berbohong kepada orang karena takut direndahkan. Meskipun aku selalu membantah bahwa jangan dipikirkan, tapi jika pikiran tetap memikirkan apa gunanya aku membatah itu? Sial nangis lagi.
-Bahkan aku selalu mengecilkan musikku dekat orang bahkan kakak ku, itu terjadi otomatis. Mungkin karena diriku suka di judge selera musiknya, selera lainnya juga itu yang membuat diriku selalu ikut ke standar orang, standar musik orang, standar berbahasa orang, standar pemikiran orang yang semua itu jelas tidak bisa membebaskan diriku untuk menjadi diri sendiri alias pura pura, Sel. Tapi lihat karena temanku ini, dengannya aku menyadari bahwa menulis teks ini dan membiarkan kamu membacanya di hari ulang tahunnya adalah keinginan diriku yang asli, tidak berbohong, tidak menutupi demi terlihat menarik untuk terus bersama..
-            </p>
-            <p>
-                Terimakasih. Karena kamu sel, aku jadi suka mikir lagi kenapa selalu mementingkan perasaan orang lain dibanding diriku sendiri.
-Jujur aku gtau, aku bingung kenapa aku selalu mementingkan orang lain dibanding diriku? 
-Bahkan Sepajang tulisan ini aku menangis ;v, mungkin karena akhirnya aku bisa mengeluarkan apa yang selalu tidak bisa dikeluarkan?
+        <div class="card hidden" id="memoryCard">
+            <div class="card-glow"></div>
 
-Ketika aku melihatmu menangis, sedih, ataupun cape, aku selalu ingin menemanimu, ada di sisimu, melepaskan emosimu kepadaku... Tapi aku tidak bisa melakukan itu, aku malu dan aku tidak berani.. aku cuman berharap dirimu datang kesini kepada temanmu ini sehingga aku benar benar bisa terbuka denganmu untuk membuatmu lebih baik :> (i wishh hahaha ;'v)
-            </p>
-            <p> .  </p>
+            <div class="icon-wrap">
+                <span class="sparkle-icon">🎉</span>
+            </div>
 
-            <p>
-                Aku selalu menunggu, selalu berharap tinggi kepada temanku ini, meskipun aku terperangkap dalam kesedihan yang ku buat sendiri dan muncul kecewa karena harapan yang terlalu tinggi, eee intinya nunggu orang peka tiba tiba hehehe. Tenang saja, itu hanya kekecewaan kecil, lagipula aku sendiri yang terlalu menunggu maksudnya terlalu anuann, ketika aku sama sekali tidak meminta kita untuk ngobrol malam, tetapi aku tetap menunggu notif dari anda yang berharap akan tiba tiba mau mengobrol denganku pada malam itu. Itu sangat konyol yakan? Gapapa itu bukan salahmu kok, tidak usah dipikirkan hehehe.. 
-            </p>
+            <div class="letter-content">
+                <span class="eyebrow" id="occasionText">Happy Birthday, my bestfrient 🎂</span>
+                <h1 class="title">To: <span class="accent" id="partnerName">Sela 💖</span></h1>
 
-            <p>
-                Termasuk kata ganti orang kesatu dan kedua ini, kamu pasti menyadarinya kan? Iyaa, kata gantinya menjadi "aku" dan "kamu". Aku memang selalu memakai "saya"  karena cukup membuat hatiku tenang dan tidak risih kepada diriku sendiri, namun kamu adalah orang pertama di hidupku yang memakai kata ganti itu juga. Rasanya senang banget, terharu apalagi itu adalah teman yang ku sukai, lebih dari suka deh... Yang ku cintai, yang bisa bikin aku khawatir.
-Aku selalu mendoakanmu sela, semua itu karena kamu sahabatku sel ;v
-            </p>
-            <p>
-                Aku berharap kamu tidak akan bosan kepadaku.
-            </p>
+                <div class="polaroid-frame">
+                    <div class="polaroid-image">
+                        <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=300&auto=format&fit=crop&q=80" alt="Romantic Memory" class="couple-photo">
+                    </div>
+                </div>
 
-            <p>
-                Ini adalah caraku mencintai seseorang, aku gamau di "rantai" oleh standar orang seperti seharus ini, seharusmya itu, aku ingin menjadi diriku sendiri. Termasuk memberikan teks ini di hari ulang tahunmu, aku tau semua perkataan ini keluar dari "perayaan" ulang tahunmu, maaf ya..
-Aku harap kamu kedepannya tetap seperti ini, maksudnya tidak ikut standar aneh. Waktu itu temanku ini berhasil membuat penulis nangis dengan jawabannya, Berjam jam aku terlalu memikirkan jauh takut penolakan terjadi diluar keinginannya, terbantahkan hanya dalam beberapa detik. Membuatku sadar, kenapa aku terlalu takut pada umurku sekarang? Terimakasih ya, Sel.
-            </p>
-            <p>.</p>
+                <div class="typed-text-container">
+                    <p class="typed-text" id="customMessage">
+                    
+                        Di hari ulangtahunmu ini, aku hanya ingin kamu tahu betapa berartinya dirimu bagiku. ❤️ Kamu adalah sumber kebahagiaan dan kenyamananku, serta orang favoritku di dunia ini. Terima kasih telah mengisi hidupku dengan cinta, tawa, dan kenangan indah. Selamat ulang tahun yang ke 17, Sela. 🎂
+                    </p>
+                </div>
+            </div>
 
-            <p>
-                Karena temanku ini, Sela. Aku mulai bisa menyadari kelebihan diriku dan kelebihan keadaanku. Tak hanya itu, dia bisa membuatku sadar bahwa jalan hidup tidak harus dibuat satu garis lurus. Belokan kecil memang wajar.
-Dan masih banyak hal yang membuka mataku bahwa aku tidak seburuk itu. Aku sendiri benci jadi orang biasa saja baik dalam skill atau kekayaan, aku gabakal terima mentok disana sel, aku pengen build masa depan saya juga agar bisa membawamu, keluar dari hal yang selama ini menekanmu? aku benar benar ingin. Aku harus.
-            </p>
-            <p>.</p>
+            <div class="card-footer">
+                <div class="footer-action" id="skipTypingBtn">
+                    <span class="action-icon">💌</span>
+                    <span class="action-text">Open Me</span>
+                </div>
+                <div class="next">
+                <a class="but" href="cupid.html">Next</a>
+            </div>
+                <div class="signature">
+                    <p>With Love,</p>
+                    <p class="signature-name" id="senderName">Alex ✍️</p>
+                </div>
+            </div>
+        </div>
 
-            <p>
-                Sela, tahukah kamu? Kamu adalah orang dan alasan terbesar aku memikirkan jauhh kedepan, sampai sampai namamu selalu ada di setiap keputusanku, aku benar benar memikirkanmu dimanapun, kapanpun. Untuk saat ini, aku masih ada di umur 16 tahun, umur yang terlalu muda untuk memikirkan semua tentang itu. Namun disisi lain itu membuatku lebih siap menghadapi masa mendatang.
-            </p>
-
-            <p>
-                Sekali lagi aku bertanya kepadamu, Kamu akan tetap menungguku kan?
-Kamu akan memaksa bersamaku kepada orang tuamu kan?
-Ya kan? :>
-
-Tenang saja, aku bertanya seperti ini bukan buat tameng kaya "kalo aku tak punya apapun, kamu harus bersamaku apapun alasannya", aku lagi berusaha keras ko buat bisa hidup lebih dari layak.
-            <p> Mungkin setelah lulus sekolah, jika aku tidak cepat cepat mapan karena keadaan lain.. jika rasa sabarmu masih memungkinkan, aku.. ingin kamu menunggu ku, apakah bisa?</p>
-
-Aduh maaf malah kesana lagiii, aku usahakan itu yang terakhirr, gabakal lagi kok :> aku ga pesimis ko engga..
-            </p>
-            <p> Kamu membuatku percaya bahwa tidak semua cewek yang aku temui niatnya hanya singgah sebentar.
-            </p>
-            <p> 
-                Terimakasih Sela! Selama ini kamu tidak fell out love kepadaku, tidak cape dengan tingkah laku ku yang aneh. Namun jika ternyata kamu cape dengan tingkah laku ku, kamu boleh omongin itu dan jangan pikirkan perasaanku! bicara saja :p
-            </p>
-
-            <p>
-                Sampai sini, akhirnya aku lumayan reda wkwkwkwk. Waah ternyata kamu masih membacanya sampai sini? Makasih bangett ya, temanku ini emang baikk bangett :>
-kalo kamu jadi ngerasa marah atau risih saat membaca ini di hari ulang tahunmu.... Maafkan ya, nanti kamu kasi tau aja kalo jangan kaya gini lagi, jujur saat aku meminta maaf terkait hal hal ini, hatiku suka sakit... Tapi gapapa, aku cuman mau bilang maaf jika aku menghancurkan hari ulang tahunmu ini dengan semua curhatanku tadi. Kalo begitu aku gabakal ngulangin ini lagi kok. Happy birthday my bestfriend, sahabat perempuanku, selamat 17tahun!! Sela Nur Fitri 'lebih dari 3', ElaNurFitri, Ameliamikaela, Mika!
-            </p>
-            <br><br>
-            <a href="ucapan.html" class="next-btn" id="next-btn">Next!</a>
-        </div>       
     </div>
-</div>
-</div>
-        </section>
-  </main>
 
-
-  <!-- ========================================== -->
-  <!-- GABUNGAN JAVASCRIPT DI BAWAH               -->
-  <!-- ========================================== -->
-  <script type="module" src="BF.js"></script>
-  <script src="congrats.js"></script>
-<script>
-    
-    const nextButton = document.getElementById("nextBtn");
-    const gameSection = document.getElementById("game-section");
-    const congratsSection = document.getElementById("congrats-section");
-    const backToGameBtn = document.getElementById("back-btn");
-
-    
-    if (nextButton) {
+    <div class="envelope-overlay hidden" id="envelopeOverlay">
+        <button class="close-overlay-btn" id="closeOverlayBtn" aria-label="Close Envelope">✕</button>
         
-        nextButton.addEventListener("click", () => {
+        <div class="cssletter">
+            <div class="envelope" id="popupEnvelope">
+                <button class="heart" id="openEnvelopeBtn" aria-label="Open Envelope">
+                    <span class="heart-text">Open</span>
+                </button>
+                <div class="envelope-flap"></div>
+                <div class="envelope-folds">
+                    <div class="envelope-left"></div>
+                    <div class="envelope-right"></div>
+                    <div class="envelope-bottom"></div>
+                </div>
+            </div>
             
-            gameSection.style.display = "none";
-            
-            congratsSection.style.display = "block"; 
-            
-           
-            window.scrollTo(0, 0);
-        });
-    }
+            <div class="letters-container" id="lettersContainer">
+                
+                <blockquote class="letter center draggable-item" id="letter1" tabindex="0">
+                    <button class="closeLetter" title="Close Letter">✕</button>
+                    <p>Selama ini, kamu baik baik saja disana kan? Apakah kamu senang di hari ulang tahunmu ini? Sela, aku bangga padamu.. Sela, terimakasih waktu yang kamu berikan setiap malam.
+                        I really wanna see you right now. Even if it's just a dream, or a hallucination.
+                    </p>
+                    <cite>5 Juli--26 Saat aku kesepian, khawatir padamu, hariku hampa hari itu.</cite>
+                </blockquote>
 
-  
+                <blockquote class="letter center draggable-item" id="letter2" tabindex="0">
+                    <button class="closeLetter" title="Close Letter">✕</button>
+                    <p>Aku masih ingat saat itu kamu masak untuk ku ;v Repot repot lohh makasih yaa.. Enak enak lagi masakannya hehehhhe. Aku harap kita bisa beneran sampe sana.. you know sana? xD, aku pasti akan selalu menunggu masakanmu😅</p>
+                    <cite>9 Juli--26 Saat aku heran sama ibuku.</cite>
+                </blockquote>
 
-    if (backToGameBtn) {
-        backToGameBtn.addEventListener('click', function(event) {
-            event.preventDefault(); 
-            
-            window.location.reload(); 
-        });
-    }
-</script>
+                <blockquote class="letter center draggable-item" id="letter3" tabindex="0">
+                    <button class="closeLetter" title="Close Letter">✕</button>
+                    <p>Lihat temanku ini, saat dia kehabisan energi, kacau. Tetapi masih tetap merespon baik kepadaku xD
+Sela, makasih ya. Meskipun Kamu tidak memberiku kabar setiap saat tentang keadaanmu saat kacau, meskipun membuatku sedih tapi.. aku tidak masalah. Dirimu memang begitu kan?. Sudah 17 tahun lamanya ya?.. sabar banget.
+Happy birthdayy🥳🎉🎉
+</p>
+                    <cite>7 Juli--26 Saat aku kembali bingung untuk semua ini</cite>
+                </blockquote>
+
+                <div class="letter center draggable-item polaroid-style" id="letter4" tabindex="0">
+                    <button class="closeLetter" title="Close Polaroid">✕</button>
+                    <div class="polaroid-wrapper">
+                        <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=300&auto=format&fit=crop&q=80" class="polaroid-img" alt="Romantic Memory">
+                        <p class="polaroid-text">For You 💖
+                            *when yahh asjdjakwhdkj 😆😗🤭
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="gift.js"></script>
 </body>
+
 </html>
