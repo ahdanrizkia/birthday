@@ -1,31 +1,44 @@
 /* ======================= LOGIKA LOADING ======================= */
-window.addEventListener('load', function() {
-  document.getElementById('loading-status').style.display = 'none'; 
-  document.getElementById('btn-mulai').style.display = 'block'; 
+
+const loadingScreen = document.getElementById('loading-screen');
+const loadingStatus = document.getElementById('loading-status');
+const btnMulai = document.getElementById('btn-mulai');
+
+// Pastikan loading screen aktif saat awal
+loadingScreen.classList.remove('loading-hidden');
+
+// Setelah halaman siap
+window.addEventListener('load', () => {
+  loadingStatus.style.display = 'none';
+  btnMulai.style.display = 'block';
 });
 
-// Aksi ketika tombol "Buka Ucapan" diklik
-document.getElementById('btn-mulai').addEventListener('click', function() {
-  const loadingScreen = document.getElementById('loading-screen');
-  loadingScreen.style.opacity = '0';
-  
+// Tombol buka ucapan
+btnMulai.addEventListener('click', () => {
+  loadingScreen.classList.add('loading-hidden');
+
   setTimeout(() => {
-    loadingScreen.style.display = 'none'; 
+    loadingScreen.style.display = 'none';
   }, 800);
 });
 
+
 /* ======================= LOGIKA MINI GAME ======================= */
+
+const gameBox = document.getElementById('game-box');
 const player = document.getElementById('player');
 
 function jump() {
-  if (player.classList.contains('jump-anim')) return;
-  
-  player.classList.add('jump-anim');
-  
-  setTimeout(() => {
-    player.classList.remove('jump-anim');
-  }, 500); // Harus sama dengan durasi animasi CSS (0.5s)
+    if (!player || player.classList.contains('jump-anim')) return;
+
+    player.classList.add('jump-anim');
+
+    setTimeout(() => {
+        player.classList.remove('jump-anim');
+    }, 500);
 }
+
+gameBox.addEventListener('click', jump);
 
 const confettiBox = document.getElementById('confetti');
 const CONFETTI_COLORS = ['#e8546a', '#f08aa0', '#d83a52', '#f6b3c2', '#c83048'];
@@ -400,7 +413,12 @@ document.addEventListener('DOMContentLoaded', function () {
       html:
       '<p>Aduh lagi lagi si Sampeu ngejaga buku lagi😭😭😭 Makasih Sampeu</p>' +
       '<p>Kamu bisa main sama si sampeu, pencet aja kalo kamu pengen ngusap dia. Kalo lagi tidur dia bakal bangun kok😭</p>' +
-      '<p>Gapapaa bangunin aja, jangan biarin dia tidurr.. tidur mulu dia wkwkkwkw baru bangun pas kamu sampe sini :V</p>'
+      '<p>Gapapaa bangunin aja, jangan biarin dia tidurr.. tidur mulu dia wkwkkwkw baru bangun pas kamu sampe sini :V btw kamu udah dengerin semua lagunya kan hehe :VVV</p>'
+    },
+    {
+      html:
+      '<p> Malu sumpahh, ini 6 september dan aku mulai ragu untuk membiarkanmu membaca semua ini ToT</p>'+
+      '<p> Malu maluin anjirlah. Tapi mau gimana lagi, aku gamau membuang 2 bulan pekerjaanku :VV</p>'
     },
     {
       html :
@@ -409,36 +427,80 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     {
       html:
-        '<h4>Halo selaa :D</h4>' +
-        '<p>Bayangkan kamu sendang mengobrol denganku</p>' +
-        '<p>Halaman halaman selanjutnya adalah ratusan kalimat tentang aku, dan caraku memandangmu.</p>' +
-        '<h5> This is a hudred of sentences that presenting myselft at July. Im sorry for all of my yapp xD </h5>'
-    },
-    {
-      html:
-        
         '<p>For me, you`ll always be my favorite person today, tomorrow and forever. ' +
         'I have no reason to give up on you, even if you show me the worst parts of yourself. I`ll still be here. I don`t care how hard things get. Or how bad your mood is sometime, i still choose you. Cause i don`t wanna love anyone else. Its always been you, and its always be you.</p>'
     },
     {
       html:
+      '<p>Akhdan. <-- Dia takut kalo nanya mulu tentang perasaan kita, karena katanya dia takut anda tertekan meskipun hanya sedikit. Mungkin dirinya gagal menjaga perasaanmu buat ga tertekan. Tapi di sisi lain, dia sangat ingin menanyakan hal itu.. Maafkan dirinya yang rumit. And thanks for you, Sela Nur Fitri!</p>'
+    },
+    {
+      html:
+      '<p>Akhdan. <-- Dia merasa gagal dalam membuat kita terus berkomunikasi seperti waktu awal awal dekat bahkan detail kecil dalam setiap masing masing kehidupannya. Karena sebenarnya, dia ingin kamu menjadi seperti kakaknya, yang exicited mendengarkan cerita kecilnya ataupun cerita kecilmu :) Tapi, dia takut untuk mengatakan semua yang dia harapkan padamu, dia terlalu takut. Lmao dramatis banget</p>'
+    },
+    {
+      html:
+      '<p> Semoga keinginan dan doa mu dikabulkan tuhan, semoga dengan naik tahun kamu dapat hal hal baik menanti. Semoga kesehatanmu meningkat, semoga dirimu bisa lebih baik setiap saatnya.</p>'
+    },
+    {
+      html:
+      '<p> Dan anehnya... Orang pertama yang ingin kuceritakan atas masa sulitku adalah kamu.</p>'+
+      '<p>ㅤ</p>'+
+      '<p>Tapi, aku ragu</p>'+
+      '<p>ㅤ</p>'+
+      '<p>Aku takut.. kalo aku mulai bercerita lebih, kamu akan melikat sisi lain diriku yang tidak seindah selama ini kamu kenal. Aku takut.. kalo aku terlalu bercerita tentang ini.. kamu justru akan perlahan menjauh tanpa kabar.'
+    },
+    {
+      html:
+      '<p> Namun.. Sela. Aku paham, ada yang salah dalam diriku. Dan tidak ada salah dalam dirimu. Seperti.. aku terus mencari arti, tanpa tau arti. Its seem like Perfeksionism.</p>' +
+      '<p> Tapi ternyata aku tetap percaya padamu Sela ;v Karena anehnya.. Diriku tetap mencarimu ketika semua konflik ini membesar sendiri yang membuatku menyadari bahwa begitu baiknya dirimu.'
+    },
+    {
+      html:
+        '<h4>Halo selaa :D</h4>' +
+        '<p>Bayangkan kamu sendang mengobrol denganku</p>' +
+        '<p>Halaman halaman selanjutnya adalah ratusan kalimat tentang aku, dan caraku memandangmu.</p>' +
+        '<h5> This is a hudred of sentences that presenting myselft at July. Im sorry for all of my yapp xD </h5>'
+    },
+  
+    {
+      html:
         
-        '<p> Hey orang orang, ada lohh teman yang baik banget kepada ku. Dia Sela, bayangin dia mengajakku untuk mewujudkan keinginanku di bidang pertanian. Aku kaget, akhirnya ada orang yang mengapresiasi perjalanan ku.. meskipun itu masih plan angan angan saja tapi aku sudah senang banget dia sampai mau menawarkan itu hahahaha xD</p>' +
+        '<p> Hey, ada teman yang baik banget kepada ku. Dia Sela, bayangin dia mengajakku untuk mewujudkan keinginanku di bidang pertanian. Aku kaget, akhirnya ada orang yang mengapresiasi perjalanan ku.. meskipun itu masih plan angan angan saja tapi aku sudah senang banget dia sampai mau menawarkan itu hahahaha xD</p>' +
         '<h5>2 Juli--26. Saat aku kembali heran kenapa aku tidak punya lahan untuk Bertani</h5>'
     },
     {
       html:
+      '<p> Dia juga pernah masakin buatku tau, aku sangat suka masakannya. Aku kagum dengan orang yang bisa masak, mungkin karena aku jarang melihat orang masak didapurku sendiri, bahkan diriku.. Aku sangat ingin masak, aku ingin belajar bersamamu nanti.. Ya! you know nanti? ;v</p>'
+    },
+    {
+      html:
+      '<p> Udah sih itu aja ;v halaman selanjutnyamah eee makin keluar dari ucapan.... aku harap sih dibaca... hehe. Tapi kalo kamu lagi cape, nanti aja bukanya :3 Aihhshh tapi kalo anda kepo.. yaudah lanjut aja ToT malu </p>'
+    },
+    {
+      html:
+      '<p> ngeyel.. tapi yaudah sih berharap ga berharap (≥o≤) moga aja ga marah ;v'
+    },
+    {
+      html:
+      '<p>Sebenernya yang paling sering aku takutkan dari semua kalimat yang akan datang.., kamu sebenarnya risih padaku tapi kamu tidak bisa mengatakan itu. Dan intinya adalah, sebuah kabar atau kepastian. Itu yang selama ini aku inginkan.. :c</p>'
+    },
+    {
+      html:
        
-        '<p>Sela, aku disini. 21:36 atau 9:39 malam.. sedang menunggu konfirmasi kamu untuk waktu yang bisa kamu berikan. Aku menulis ini. Dimana aku pengen jujur, dari awal ketika diriku overthinkingnya untuk karirku.. (sepanjang July) selain itu aku ovt tentang hubungan kita sel, ternyata aku suka sakit hati kalo tidak ada kepastian. Dan anehnya patokan kepastiannya itu ga logis. Bgini, aku ingin diberi kepastian yang sangat  </p>'
+        '<p>Sela, aku disini. 21:36 atau 9:39 malam.. sedang menunggu konfirmasi kamu untuk waktu yang bisa kamu berikan. Aku menulis ini. Dimana aku pengen jujur, dari awal ketika diriku overthinkingnya untuk karirku.. (sepanjang July) selain itu aku ovt tentang hubungan kita sel (teman), ternyata aku suka sakit hati kalo tidak ada kepastian. Dan anehnya patokan kepastiannya itu ga logis. Bgini, aku berharap diberi kepastian yang </p>'
     },
     {
       html:
-      '<p> sangat sering datang. Sel, aku selalu berfikir bahwa sepertinya kamu akan hilang perasaannya hanya karena respon, anda terlihat tidak senang. Emm, berlebihan kan? Iya, aku tau. Gausah penuhin harapan itu, aku cuman pengen jujur aja. ahehheheh ;v</p>' +
-      '<p> Aku takut hilang perasaannya karena kamu akan mendapatkan pemikiran baru yang menyebabkan kamu meninggalkanku. Dan itu selalu menjadi kesimpulan akhir di otakku.. tapi setelah aku menyadari, dimana ketika </p>'
+      '<p>sering datang. Seperti, apa kamu masih... suka? apa kamu masih..... mengarah pada tujuan yang kita buat sebelumnya? ;v dan sepertinya, Akhdan sudah bertanya tentang hal ini sebelum 9 september? aku tidak tahu, apakah dia berani nanya seperti itu padamu. Sel, aku selalu berfikir bahwa sepertinya kamu akan hilang perasaannya hanya karena respon yang berbeda, kamu terlihat tidak senang. Emm, berlebihan kan? Iya, aku tau. Gausah penuhin harapan itu, aku cuman pengen jujur aja. ahehheheh ;v</p>'
     },
     {
       html:
-      '<p>kamu tersenyum padaku saat bertemu, membagi waktu denganku meskipun aku tau kamu sibuk.. tetap memaafkan keanehan diriku, menerima semua yang sudah terjadi kemarin sebelum menginjak tanggal sekarang, 9 september.. dan tetap tidak mengganti tujuan kita sampai menyentuh 5 bulan. 10 April, kita berjanji.</p>' +
+      '<p> Aku takut hilang perasaannya karena kamu akan mendapatkan pemikiran baru yang menyebabkan kamu meninggalkanku. Dan itu selalu menjadi kesimpulan akhir di otakku.. tapi setelah aku menyadari, dimana ketika kamu tersenyum padaku saat bertemu, membagi waktu denganku meskipun aku tau kamu sibuk.. tetap memaafkan keanehan diriku,</p>'
+    },
+    {
+      html:
+      '<p> menerima semua yang sudah terjadi kemarin sebelum menginjak tanggal sekarang, 9 september.. dan tetap tidak mengganti tujuan kita sampai menyentuh 5 bulan. 10 April, kita berjanji.</p>' +
       '<p> Aku benar benar sehat waktu itu, pikiranku kosong, bebanpu ngaada. Semakin kesini aku payah sel, aku kaya selalu ga percaya sama apa yang aku rencanakan. </p>'
     },
     {
@@ -456,12 +518,12 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     {
       html:
-      '<p>Intinya ternyata aku butuh kepastian yang ibaratnya selaluu ada tiap jam, misal kamu terlihat memerhatikan ku selalu, kamu terlihat peduli dan menenangkan ku, kamu menegurku untuk tidak seperti ini dan sebagainya. Yap, itu ga wajib, itu cuman keinginan ku. Aku ga maksa dan ga berharap lebih ko, kita kan temen doang hehehhe, aku cuman pengen jujur aja.</p>'
+      '<p>Intinya ternyata aku mengharapkan kepastian yang ibaratnya selaluu ada tiap jam, misal kamu terlihat memerhatikan ku selalu, kamu terlihat peduli dan menenangkan ku, kamu menegurku untuk tidak seperti ini dan sebagainya. Yap, itu ga wajib, itu cuman keinginan ku. Aku ga maksa dan ga berharap lebih ko, kita kan temen doang hehehhe, aku cuman pengen jujur aja.</p>'
     },
     {
       html:
-      '<p>Karena kata kamu sela, kita harus jaga komunikasi termasuk saling jujur, jangan menutupi apapun. Aku juga malu untuk meminta itu makanya aku lebih memilih simpan ini untuk hari ini, hari ulang tahunmu :) Btw, hbd ya! </p>' +
-      '<h5> 15 Juli--26 Saat aku muak sama diri sendiri. Aku menyadari lagi masalahnya bukan orang lain, tapi selalu diriku. </h5>'
+      '<p>Karena kata kamu sela, kita harus jaga komunikasi termasuk saling jujur, jangan menutupi apapun. Aku sebenernya malu untuk meminta itu makanya aku lebih memilih simpan ini untuk hari ini, hari ulang tahunmu :) Btw, hbd ya! </p>' +
+      '<h5> 15 Juli--26 Saat aku muak sama diri sendiri. </h5>'
     },
     {
       html:
@@ -475,7 +537,7 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     {
       html:
-      '<p>Setelah beberapa hari akhirnya aku mulai merasa akan baik baik saja. Hmm rasanya lumayan tenang sih dari kemarin yang segala dipikirin sampai ga betah dirumah. Untungnya ada kamu yang masih tahan buat dengerin atau baca keluhan ku waktu itu, meskipun aku sendiri tidak kuat membacanya atau memikirkannya lagi🤣😭🗿🗿 Itu membuatku aga lega ditengah proses lompat jurang, meskipun nangis badag saat ngobrolin itu denganmu tapi eee maklumin aja ;v </p>'
+      '<p>Setelah beberapa hari akhirnya aku mulai merasa akan baik baik saja. Hmm rasanya lumayan tenang sih dari kemarin yang segala dipikirin sampai ga betah dirumah. Untungnya ada kamu yang masih tahan buat dengerin atau baca keluhan ku waktu itu, meskipun aku sendiri tidak kuat membacanya atau memikirkannya lagi😭🗿 Itu membuatku aga lega ditengah proses lompat jurang, meskipun nangis badag saat ngobrolin itu denganmu tapi eee maklumin aja ;v </p>'
     },
     {
       html:
@@ -534,7 +596,7 @@ document.addEventListener('DOMContentLoaded', function () {
     {
       html:
       '<h5>Harapan 2</h5>' +
-      '<p> Sella, Kamu pasti tau ini. Seorang laki laki itu insecure kalo punya hubungan dengan seorang cewek yang lebih mapan darinya. Laki laki berevolusi dengan "Hero instings" dimana dia merasa menjadi pahlawan atas pasangannya adalah sebuah keberhasilan, diluar itu adalah sebuah kegagalan. Maaf kalo kamu ga ngerti kenapa aku ngomong gitu, begini. Saat ini, otakku sudah hidup di umur 23+. Bukan biar terlihat dewasa dan gagayaan, </p>'
+      '<p> Sella, Kamu pasti tau ini. Seorang laki laki itu insecure kalo punya hubungan dengan seorang cewek yang lebih mapan darinya. Laki laki berevolusi dengan "Hero instings" dimana dia merasa menjadi pahlawan atas pasangannya adalah sebuah keberhasilan, diluar itu adalah sebuah kegagalan. Maaf kalo kamu ga ngerti kenapa aku ngomong gitu, begini. Saat ini, otakku sudah hidup di umur 21+. Bukan biar terlihat dewasa dan gagayaan, </p>'
     },
     {
       html:
@@ -575,6 +637,10 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     {
       html:
+      '<p> Selanjutnya ada pesan dariku, tapi aku yakin ini makin jauh dari ucapan ulang tahunmu.. Itu tidak wajib dibuka.'
+    },
+    {
+      html:
       '<h5>Pesan dariku</h5>'+
       '<p> Sela, kamu tau kan apa itu realita sosial? Emm, aku jelasin aja singkat takutnya anda belum tau: </p>' +
       '<p> Realita sosial itu kenyataan atau fakta yang terjadi di sosial. Kaya norma, interaksi, tuntutan, nilai orang dll. Kamu tau kan realita sosial berpasangan? Dimana laki laki yang menjalankan hubungan dengan seorang cewek yang lebih mapan darinya biasanya dianggap salah? Kaya yang paling populer "mokondo". </p>'
@@ -590,7 +656,7 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     {
       html:
-      '<p>Aku tau sela, sekarang kamu hidup di ekonomi yang stabil. Tentu seleramu juga kan? Aku takut aku malah membawamu lebih rendah dari itu.. jika aku gagal, Sela.. apa kamu masih tetap mau? Menurutku, itu pertanyaan simple tapi banyak banget pengaruhnya ke diriku. </p>' +
+      '<p>Aku tau sela, sekarang kamu hidup di ekonomi yang stabil. Tentu seleramu juga kan? Aku takut aku malah membawamu lebih rendah dari itu.. jika aku gagal, Sela.. apa kamu masih tetap mau menunggu? Menurutku, itu pertanyaan simple tapi banyak banget pengaruhnya ke diriku. </p>' +
       '<p>..</p>' +
       '<p>Aku gatau apa yang akan ku tanggung di dunia ini kedepannya, aku udah diharepin sama Kakaku, orang yang paling dekat denganku sebelum dirimu. </p>'
     },
@@ -608,12 +674,18 @@ document.addEventListener('DOMContentLoaded', function () {
       html:
       '<p>Padahal setiap hari aku memikirkan bagaimana caranya agar "layak" denganmu. Aku juga setiap kali ingin berkata "Aku serius memperjuangkan ini", tapi hati, lidah, dan otakku selalu tertahan oleh kenyataan bahwa semua yang aku progreskan Itu akan diukur dari angka, pekerjaan, kemapanan, tanggung jawab, isi rekening. Bukan dari seberapa tahan dan seberapa bagus ideku😔</p>'+
       '<p>..</p>'
-    },{
+    },
+    {
       html:
-      '<p>Aku gatau gimana nanti, aku juga dalam keadaan mustahil kok kaya gitu, aku yakin. Tapi yang aku sampaikan jelas kan? Bagaimana jika diriku gagal keluar dari mid class sementara kamu berhasil? Atau minimal masih di midclass? Aku mau kamu kasi jawaban sel hihi, kalo masih kurang jelas tentang harapan ini.. mohon ditanyakan ya? Kamu gaboleh pura pura paham, aku takut kamu salah paham dan kamu gatau itu salah paham.</p>'
-    },{
+      '<p> Yang selalu aku pikirkan adalah, sekarang apa yang aku punya ini berkat ayahku.. berkat orangtuaku, aku pikir tanpa orang tua aku tuh sama kaya anak lain yang bisa dibilang "pas pasan". Maka, sesekali aku ragu jika suatu hari aku hidup tanpa ayahku, bisakah aku menjadi seperti ayahku? bisakah aku menghidupi diri sendiri dan orang lain?</p>'
+    },
+    {
       html:
-      '<p>Aku pengen bener bener jawaban yang serius ya? I fvcking afraid for my future in this country and for AI wave..</p>' +
+      '<p>Aku gatau gimana nanti, aku juga dalam keadaan mustahil kok kaya gitu, aku yakin. Tapi yang aku sampaikan jelas kan? Bagaimana jika diriku gagal keluar dari mid class sementara kamu berhasil? Atau minimal masih di midclass? apa yang akan kamu lakukan? Aku mau kamu kasi jawaban sel kalo boleh hihi, kalo masih kurang jelas tentang harapan ini.. mohon ditanyakan ya? Kamu gaboleh pura pura paham, aku takut kamu salah paham dan kamu gatau itu salah paham.</p>'
+    },
+    {
+      html:
+      '<p>Aku berharap jawaban yang serius, I fvcking afraid for my future in this country and for AI wave..</p>' +
       '<p>..</p>'+
       '<p> Aku bersyukur kenal kamu, bertemu teman yang lebih dariku, aku biasanya merasa lebih stabil karena keadaan ku yang bisa dibilang "lebih aman" dari mereka. Namun setelah kenal dirimu dan keluargamu, aku jadi tau bahwa ini adalah zona nyaman yang bakal hancur jika diteruskan. </p>'
     },
@@ -621,7 +693,7 @@ document.addEventListener('DOMContentLoaded', function () {
       html:
       '<p>Ibaratnya keadaanku saat ini memang layak, enak dan harus disyukuri. Namun jika seperti ini terus kita akan mati. Begitu maksudnya.</p>'+
       '<p>..</p>'+
-      '<p>Karena aku sudah meminta harapan dan pesan untuk mu, kamu boleh katakan apa pesan dan harapanmu padaku untuk selamanya? Sekarang aku mau kita tidak peduli apa yang sedang kita omongin di umur segini, gapapa aku pengen tau. Meskipun jauhh banget wkwkkw x> </p>'
+      '<p>Karena aku sudah meminta harapan dan pesan untuk mu, kamu boleh katakan apa pesan dan harapanmu padaku untuk selamanya? aku tau diriku tidak sempurna, setidaknya jika ada pesan atau harapan darimu, diriku bisa jadi lebih baik? Sekarang aku mau kita tidak peduli apa yang sedang kita omongin di umur segini, gapapa aku pengen tau. Meskipun jauhh banget wkwkkw x> </p>'
     },
     {
       html:
