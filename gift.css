@@ -877,7 +877,8 @@ body {
     border: 2px solid #e6ccb2; 
     color: var(--letter-text);
     width: var(--letter-x);
-    height: var(--letter-y);
+    height: auto;
+    min-height: var(--letter-y);
     border-radius: 12px;
     user-select: none;
     -webkit-user-select: none;
