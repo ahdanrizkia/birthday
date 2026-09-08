@@ -444,11 +444,19 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     {
       html:
+      "<p>Hari ini semesta merayakan kehadiranmu, selamat beranjak usia, Sela. Semoga semua perlakuan yang membentuk dirimu.. Tiap senyuman yang kau berikan kepada orang sehingga senyumanmu menetap disana.. Tiap niat baikmu yang sudah dilalui.. Bisa menjadi pahatan paling indah dan megah.</p>"
+    },
+    {
+      html:
+      '<p>Dan yang paling penting, pada tempat pulang yang kelak menjadi teduhmu.. semoga kebahagiaan dan kenyamanan terus riuh mengisi pada setiap keheningan disana. Sedangkan disini, biarlah hamparan doaku senantiasa membentang luas, merawat namamu dalam sunyi.. Dan tidak akan pernah melepas permintaan untuk menjagamu kepada tuhanku.</p>'
+    },
+    {
+      html:
       '<p> Dan anehnya... Orang pertama yang ingin kuceritakan atas masa sulitku adalah kamu.</p>'+
       '<p>ㅤ</p>'+
       '<p>Tapi, aku ragu</p>'+
       '<p>ㅤ</p>'+
-      '<p>Aku takut.. kalo aku mulai bercerita lebih, kamu akan melikat sisi lain diriku yang tidak seindah selama ini kamu kenal. Aku takut.. kalo aku terlalu bercerita tentang ini.. kamu justru akan perlahan menjauh tanpa kabar.'
+      '<p>Aku takut.. kalo aku terlalu bercerita tentang ini.. kamu justru akan perlahan menjauh tanpa kabar.'
     },
     {
       html:
@@ -487,12 +495,16 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     {
       html:
+      '<p> Sel.. ini bukan juli, sekarang 8 september aku datang lagi ke buku ini untuk menyampaikan: Aku..,, benar benar jadi ragu untuk membiarkan kamu membaca semua ini, tapi sekecil debu dalam diriku masih meminta dirimu membacanya. Namun tak pa, aku sudah memahami dan memaafkan hal yang membuat diriku berfikir seperti ini</p>'
+    },
+    {
+      html:
        
         '<p>Sela, aku disini. 21:36 atau 9:39 malam.. sedang menunggu konfirmasi kamu untuk waktu yang bisa kamu berikan. Aku menulis ini. Dimana aku pengen jujur, dari awal ketika diriku overthinkingnya untuk karirku.. (sepanjang July) selain itu aku ovt tentang hubungan kita sel (teman), ternyata aku suka sakit hati kalo tidak ada kepastian. Dan anehnya patokan kepastiannya itu ga logis. Bgini, aku berharap diberi kepastian yang </p>'
     },
     {
       html:
-      '<p>sering datang. Seperti, apa kamu masih... suka? apa kamu masih..... mengarah pada tujuan yang kita buat sebelumnya? ;v dan sepertinya, Akhdan sudah bertanya tentang hal ini sebelum 9 september? aku tidak tahu, apakah dia berani nanya seperti itu padamu. Sel, aku selalu berfikir bahwa sepertinya kamu akan hilang perasaannya hanya karena respon yang berbeda, kamu terlihat tidak senang. Emm, berlebihan kan? Iya, aku tau. Gausah penuhin harapan itu, aku cuman pengen jujur aja. ahehheheh ;v</p>'
+      '<p>sering datang. Seperti, apa kamu masih... suka? apa kamu masih..... mengarah pada tujuan yang kita buat sebelumnya? Padahal aku tau kita sibuk, kenapa aku terus meminta hal yang tidak perlu. ;v dan sepertinya, Akhdan sudah bertanya tentang hal ini sebelum 10 september? aku tidak tahu, apakah dia berani nanya seperti itu padamu. Sel, aku selalu berfikir bahwa sepertinya kamu akan hilang perasaannya hanya karena respon yang berbeda, kamu terlihat tidak senang. Emm, berlebihan kan? Iya, aku tau. Gausah penuhin harapan itu, aku cuman pengen jujur aja. ahehheheh ;v</p>'
     },
     {
       html:
@@ -500,7 +512,7 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     {
       html:
-      '<p> menerima semua yang sudah terjadi kemarin sebelum menginjak tanggal sekarang, 9 september.. dan tetap tidak mengganti tujuan kita sampai menyentuh 5 bulan. 10 April, kita berjanji.</p>' +
+      '<p> menerima semua yang sudah terjadi kemarin sebelum menginjak tanggal sekarang, 10 september.. dan tetap tidak mengganti tujuan kita sampai menyentuh 5 bulan. 10 April, kita berjanji.</p>' +
       '<p> Aku benar benar sehat waktu itu, pikiranku kosong, bebanpu ngaada. Semakin kesini aku payah sel, aku kaya selalu ga percaya sama apa yang aku rencanakan. </p>'
     },
     {
@@ -567,7 +579,8 @@ document.addEventListener('DOMContentLoaded', function () {
     {
       html:
       '<h2>Aku punya harapan dan pesan padamu, boleh?</h2>' +
-      '<p> lanjut kalo boleh </p>'
+      '<p> lanjut kalo boleh </p>'+
+      '<p> Tapi menurutku, halaman selanjutnya sampai tamat itu sebuah sampah yang tidak usah dibaca... 8 september, aku semakin ragu untuk memberikan rangkayan kalimat sampah ini kepadamu.. Maafkan diriku di bulan juli :(</p>'
     },
     {
       html:
@@ -637,7 +650,7 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     {
       html:
-      '<p> Selanjutnya ada pesan dariku, tapi aku yakin ini makin jauh dari ucapan ulang tahunmu.. Itu tidak wajib dibuka.'
+      '<p> Selanjutnya ada pesan dariku, tapi aku yakin ini makin jauh dari ucapan ulang tahunmu.. Itu tidak wajib dibuka. Dan menurutku, tidak usah dibuka. Akhdan menulis saran ini tanggal 8, aku mulai ragu untuk melepas semua ini</p>'
     },
     {
       html:
@@ -648,7 +661,7 @@ document.addEventListener('DOMContentLoaded', function () {
     {
       html:
       '<p>Tapi.. aku punya kemungkinan keadaan terburuk di diriku yang sudah ku analisis, yaitu : </p>' +
-      '<p> Jika aku tidak bisa melewati middle class, maukah kamu tetap ada disini? Memberikan apa yang kamu punya, maksudnya dominan yang kamu punya, baik ilmu, tempat dan sebagainya agar kita bisa hidup layak. Aku tau ini salah, ini gaboleh, ini ga sesuai dengan realita. Adudhhsss aku tulis lebih jelas deh ;v </p>'
+      '<p> Jika aku tidak bisa melewati middle class, maukah kamu tetap ada disini? Memberikan apa yang kamu punya, maksudnya dominan yang kamu punya, baik ilmu, tempat dan sebagainya agar kita bisa saling membantu hidup. Aku tau ini salah, ini gaboleh, ini ga sesuai dengan realita. Adudhhsss aku tulis lebih jelas deh ;v </p>'
     },
     {
       html:
