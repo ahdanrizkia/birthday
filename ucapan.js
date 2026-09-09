@@ -436,7 +436,7 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     {
       html:
-      '<p>Akhdan. <-- Dia merasa gagal dalam membuat kita terus berkomunikasi seperti waktu awal awal dekat bahkan detail kecil dalam setiap masing masing kehidupannya. Karena sebenarnya, dia ingin kamu menjadi seperti kakaknya, yang exicited mendengarkan cerita kecilnya ataupun cerita kecilmu :) Tapi, dia takut untuk mengatakan semua yang dia harapkan padamu, dia terlalu takut. Lmao dramatis banget</p>'
+      '<p>Akhdan. <-- Dia merasa gagal dalam membuat kita terus berkomunikasi tentang detail kecil dalam setiap masing masing kehidupannya. Karena sebenarnya, dia ingin kamu menjadi seperti kakaknya, yang exicited mendengarkan cerita kecilnya ataupun cerita kecilmu :) Tapi, dia takut untuk mengatakan semua yang dia harapkan padamu, dia terlalu takut. Lmao dramatis banget</p>'
     },
     {
       html:
@@ -444,11 +444,11 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     {
       html:
-      "<p>Hari ini semesta merayakan kehadiranmu, selamat beranjak usia, Sela. Semoga semua perlakuan yang membentuk dirimu.. Tiap senyuman yang kau berikan kepada orang sehingga senyumanmu menetap disana.. Tiap niat baikmu yang sudah dilalui.. Bisa menjadi pahatan paling indah dan megah.</p>"
+      "<p>Hari ini semesta merayakan kehadiranmu, selamat beranjak usia, Sela. Semoga semua perlakuan yang membentuk dirimu.. Tiap senyuman yang kau berikan kepada orang sehingga senyumanmu menetap disana.. Tiap niat baikmu yang sudah dilalui.. Bisa menjadi pahatan paling indah dan megah di jiwamu.</p>"
     },
     {
       html:
-      '<p>Dan yang paling penting, pada tempat pulang yang kelak menjadi teduhmu.. semoga kebahagiaan dan kenyamanan terus riuh mengisi pada setiap keheningan disana. Sedangkan disini, biarlah hamparan doaku senantiasa membentang luas, merawat namamu dalam sunyi.. Dan tidak akan pernah melepas permintaan untuk menjagamu kepada tuhanku.</p>'
+      '<p>Dan yang paling penting, pada tempat pulang yang kelak menjadi teduhmu.. semoga kebahagiaan dan kenyamanan terus riuh mengisi pada setiap keheningan disana. Sedangkan disini, biarlah hamparan doaku senantiasa membentang luas, merawat namamu dalam sunyi.. Dan tidak akan pernah melepas permintaan kepada tuhanku untuk menjagamu.</p>'
     },
     {
       html:
@@ -491,7 +491,7 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     {
       html:
-      '<p>Sebenernya yang paling sering aku takutkan dari semua kalimat yang akan datang.., kamu sebenarnya risih padaku tapi kamu tidak bisa mengatakan itu. Dan intinya adalah, sebuah kabar atau kepastian. Itu yang selama ini aku inginkan.. :c</p>'
+      '<p>Sebenernya yang paling sering aku takutkan dari semua kalimat yang akan datang.., kamu sebenarnya risih padaku tapi kamu tidak bisa mengatakan itu. Dan intinya adalah, sebuah kabar atau kepastian. Itu yang selama ini aku inginkan.. :c Tapi gapapa kok, aku rasa kamu sudah memberikan hal itu, cuman aku saja yang sulit menyadarinya hehe.</p>'
     },
     {
       html:
